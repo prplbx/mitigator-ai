@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Governance - mitigator.ai</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional styles for governance page */
+        .governance-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .governance-content h2 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .governance-content p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .framework-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .framework-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .framework-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .framework-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+        
+        .framework-icon i {
+            font-size: 25px;
+            color: var(--primary-color);
+        }
+        
+        .framework-title h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .framework-title p {
+            margin: 5px 0 0;
+            color: var(--gray-color);
+        }
+        
+        .framework-content {
+            margin-bottom: 20px;
+        }
+        
+        .framework-principles {
+            margin-bottom: 20px;
+        }
+        
+        .framework-principles h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .framework-principles ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .framework-principles ul li {
+            margin-bottom: 5px;
+        }
+        
+        .governance-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .governance-table th {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: left;
+            padding: 15px;
+        }
+        
+        .governance-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            background-color: white;
+        }
+        
+        .governance-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .governance-table tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>mitigator<span class="highlight">.ai</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#use-cases">Use Cases</a></li>
+                    <li><a href="ai-tools.html">AI Tools</a></li>
+                    <li><a href="ai-governance.html" class="active">AI Governance</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact" class="btn-primary">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Responsible <span class="highlight">AI Governance</span> Framework</h1>
+                <p>Implementing ethical, transparent, and accountable AI systems for sustainable innovation and risk mitigation.</p>
+            </div>
+            <div class="hero-image">
+                <div class="ai-graphic" style="background: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=450&q=80') no-repeat center center/cover;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="governance-content">
+        <div class="container">
+            <div class="section-header">
+                <h2>The <span class="highlight">Importance</span> of AI Governance</h2>
+                <p>Building trust and managing risks in the age of artificial intelligence</p>
+            </div>
+            
+            <p>As artificial intelligence becomes increasingly integrated into business operations and decision-making processes, establishing robust governance frameworks is essential. AI governance encompasses the policies, processes, and structures that ensure AI systems are developed and deployed responsibly, ethically, and in compliance with regulations.</p>
+            
+            <p>At mitigator.ai, we help organizations implement comprehensive AI governance frameworks that balance innovation with risk management, ensuring that AI initiatives align with organizational values, regulatory requirements, and stakeholder expectations.</p>
+
+            <div class="framework-card">
+                <div class="framework-header">
+                    <div class="framework-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="framework-title">
+                        <h3>Ethical AI Framework</h3>
+                        <p>Principles for responsible AI development</p>
+                    </div>
+                </div>
+                <div class="framework-content">
+                    <p>Our Ethical AI Framework provides a structured approach to addressing the ethical implications of AI systems throughout their lifecycle. This framework helps organizations establish clear principles, processes, and accountability mechanisms to ensure AI systems are designed and deployed in ways that respect human rights, promote fairness, and prevent harm.</p>
+                </div>
+                <div class="framework-principles">
+                    <h4>Core Principles:</h4>
+                    <ul>
+                        <li><strong>Fairness and Non-discrimination:</strong> AI systems should be designed to avoid creating or reinforcing unfair bias against individuals or groups.</li>
+                        <li><strong>Transparency and Explainability:</strong> Organizations should be able to explain how their AI systems work and make decisions in understandable terms.</li>
+                        <li><strong>Privacy and Data Governance:</strong> AI development should respect privacy rights and ensure appropriate data governance throughout the data lifecycle.</li>
+                        <li><strong>Human Oversight:</strong> Humans should maintain meaningful control over AI systems, particularly for high-risk applications.</li>
+                        <li><strong>Accountability:</strong> Clear mechanisms should exist for addressing concerns and remedying any negative impacts of AI systems.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="framework-card">
+                <div class="framework-header">
+                    <div class="framework-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="framework-title">
+                        <h3>AI Risk Management</h3>
+                        <p>Identifying and mitigating AI-related risks</p>
+                    </div>
+                </div>
+                <div class="framework-content">
+                    <p>Effective AI governance requires robust risk management processes that identify, assess, and mitigate potential risks associated with AI systems. Our AI Risk Management framework helps organizations systematically address technical, operational, legal, reputational, and ethical risks throughout the AI lifecycle.</p>
+                </div>
+                <div class="framework-principles">
+                    <h4>Key Components:</h4>
+                    <ul>
+                        <li><strong>Risk Assessment:</strong> Systematic evaluation of potential risks across different dimensions (technical, ethical, legal, etc.).</li>
+                        <li><strong>Mitigation Strategies:</strong> Tailored approaches to address identified risks, including technical safeguards and process controls.</li>
+                        <li><strong>Monitoring and Testing:</strong> Continuous monitoring of AI systems to detect and address emerging risks or performance issues.</li>
+                        <li><strong>Incident Response:</strong> Defined protocols for responding to AI system failures or unintended consequences.</li>
+                        <li><strong>Documentation:</strong> Comprehensive documentation of risk assessments, mitigation measures, and governance decisions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="framework-card">
+                <div class="framework-header">
+                    <div class="framework-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div class="framework-title">
+                        <h3>Regulatory Compliance</h3>
+                        <p>Navigating the evolving AI regulatory landscape</p>
+                    </div>
+                </div>
+                <div class="framework-content">
+                    <p>The regulatory landscape for AI is rapidly evolving, with new laws and regulations being developed across jurisdictions. Our Regulatory Compliance framework helps organizations stay ahead of regulatory requirements and build AI systems that meet current and anticipated compliance obligations.</p>
+                </div>
+                <div class="framework-principles">
+                    <h4>Focus Areas:</h4>
+                    <ul>
+                        <li><strong>Regulatory Monitoring:</strong> Tracking emerging AI regulations and standards across relevant jurisdictions.</li>
+                        <li><strong>Compliance Assessment:</strong> Evaluating AI systems against applicable regulatory requirements.</li>
+                        <li><strong>Documentation and Reporting:</strong> Maintaining required documentation and preparing regulatory reports.</li>
+                        <li><strong>Compliance by Design:</strong> Integrating regulatory requirements into AI development processes.</li>
+                        <li><strong>Stakeholder Engagement:</strong> Engaging with regulators, industry groups, and other stakeholders on AI governance issues.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 60px;">
+                <h2>AI Governance <span class="highlight">Maturity Model</span></h2>
+                <p>Assessing and enhancing your organization's AI governance capabilities</p>
+            </div>
+
+            <p>Our AI Governance Maturity Model helps organizations assess their current governance capabilities and develop a roadmap for improvement. The model defines five maturity levels across key governance dimensions, providing a structured approach to enhancing AI governance over time.</p>
+
+            <table class="governance-table">
+                <tr>
+                    <th>Maturity Level</th>
+                    <th>Characteristics</th>
+                    <th>Organizational Focus</th>
+                </tr>
+                <tr>
+                    <td><strong>Level 1: Initial</strong></td>
+                    <td>Ad hoc governance processes, limited awareness of AI risks, no formal policies</td>
+                    <td>Building awareness, establishing basic governance structures</td>
+                </tr>
+                <tr>
+                    <td><strong>Level 2: Developing</strong></td>
+                    <td>Basic policies established, some risk assessment, limited monitoring</td>
+                    <td>Formalizing policies, implementing basic controls</td>
+                </tr>
+                <tr>
+                    <td><strong>Level 3: Defined</strong></td>
+                    <td>Comprehensive policies, standardized processes, regular risk assessments</td>
+                    <td>Standardizing processes, enhancing risk management</td>
+                </tr>
+                <tr>
+                    <td><strong>Level 4: Managed</strong></td>
+                    <td>Quantitative governance metrics, continuous monitoring, proactive risk management</td>
+                    <td>Measuring effectiveness, optimizing processes</td>
+                </tr>
+                <tr>
+                    <td><strong>Level 5: Optimizing</strong></td>
+                    <td>Continuous improvement, industry leadership, integration with business strategy</td>
+                    <td>Innovating governance approaches, influencing industry standards</td>
+                </tr>
+            </table>
+
+            <div class="section-header" style="margin-top: 60px;">
+                <h2>Our AI Governance <span class="highlight">Services</span></h2>
+                <p>Comprehensive support for your AI governance journey</p>
+            </div>
+
+            <p>mitigator.ai offers a range of services to help organizations establish and enhance their AI governance capabilities:</p>
+
+            <div class="service-grid" style="margin-top: 30px;">
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-sitemap"></i></div>
+                    <h3>Governance Framework Development</h3>
+                    <p>Custom AI governance frameworks aligned with your organization's values, risk profile, and regulatory requirements.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-search"></i></div>
+                    <h3>AI Risk Assessment</h3>
+                    <p>Comprehensive assessment of AI-related risks across technical, ethical, legal, and operational dimensions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Policy Development</h3>
+                    <p>Creation of AI policies, standards, and guidelines tailored to your organization's needs and industry context.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-users-cog"></i></div>
+                    <h3>Governance Implementation</h3>
+                    <p>Support for implementing governance structures, processes, and tools across your organization.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="index.html#contact" class="btn-primary">Schedule a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>mitigator<span class="highlight">.ai</span></h2>
+                    <p>Transforming business through intelligent AI solutions</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="index.html#services">AI Strategy</a></li>
+                            <li><a href="index.html#services">Implementation</a></li>
+                            <li><a href="index.html#services">Analytics</a></li>
+                            <li><a href="index.html#services">Training</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Use Cases</h4>
+                        <ul>
+                            <li><a href="index.html#use-cases">Support Tech</a></li>
+                            <li><a href="index.html#use-cases">Personal Assistant</a></li>
+                            <li><a href="index.html#use-cases">Predictive Analytics</a></li>
+                            <li><a href="index.html#use-cases">Security Solutions</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="ai-tools.html">AI Tools</a></li>
+                            <li><a href="ai-governance.html">AI Governance</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 mitigator.ai. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
