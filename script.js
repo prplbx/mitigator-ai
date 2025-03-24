@@ -194,6 +194,35 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('load', handleScrollAnimation);
     window.addEventListener('scroll', handleScrollAnimation);
     
+    // Lazy loading for background images
+    const lazyBackgrounds = [
+        ...document.querySelectorAll('.ai-graphic'),
+        ...document.querySelectorAll('.team-graphic')
+    ].filter(Boolean);
+    
+    if (lazyBackgrounds.length > 0) {
+        // Add lazy-load class to all background elements
+        lazyBackgrounds.forEach(bg => {
+            bg.classList.add('lazy-load');
+        });
+        
+        // Function to handle lazy loading of background images
+        function handleLazyLoad() {
+            lazyBackgrounds.forEach(bg => {
+                if (isInViewport(bg) && !bg.classList.contains('loaded')) {
+                    // Add a small delay to ensure smooth transition
+                    setTimeout(() => {
+                        bg.classList.add('loaded');
+                    }, 100);
+                }
+            });
+        }
+        
+        // Check for lazy load elements on load and scroll
+        window.addEventListener('load', handleLazyLoad);
+        window.addEventListener('scroll', handleLazyLoad);
+    }
+    
     // Add CSS for error and success messages
     const style = document.createElement('style');
     style.textContent = `

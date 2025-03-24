@@ -197,7 +197,7 @@ nav ul li a:hover {
 .ai-graphic {
     width: 450px;
     height: 350px;
-    background: url('https://via.placeholder.com/450x350') no-repeat center center/cover;
+    background: url('https://images.unsplash.com/photo-1677442135136-760c813a743d?ixlib=rb-4.0.3&auto=format&fit=crop&w=450&q=80') no-repeat center center/cover;
     border-radius: 10px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
@@ -394,7 +394,7 @@ nav ul li a:hover {
 .team-graphic {
     width: 100%;
     height: 400px;
-    background: url('https://via.placeholder.com/600x400') no-repeat center center/cover;
+    background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') no-repeat center center/cover;
     border-radius: 10px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
@@ -569,6 +569,16 @@ footer {
 
 .legal-links a:hover {
     color: white;
+}
+
+/* Lazy Loading */
+.lazy-load {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.lazy-load.loaded {
+    opacity: 1;
 }
 
 /* Responsive Styles */
