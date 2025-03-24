@@ -146,11 +146,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to check if element is in viewport
     function isInViewport(element) {
         const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+        
+        // Check if any part of the element is in the viewport
         return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            rect.bottom > 0 &&
+            rect.right > 0 &&
+            rect.top < windowHeight &&
+            rect.left < windowWidth
         );
     }
     

@@ -197,7 +197,7 @@ nav ul li a:hover {
 .ai-graphic {
     width: 450px;
     height: 350px;
-    background: linear-gradient(135deg, #4361ee, #3a0ca3);
+    background: url('./images/arnold-francisca-f77Bh3inUpE-unsplash.jpg') center/cover no-repeat;
     border-radius: 10px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
@@ -389,14 +389,28 @@ nav ul li a:hover {
 
 .about-image {
     flex: 1;
+    margin-top: 30px;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .team-graphic {
     width: 100%;
     height: 400px;
-    background: linear-gradient(135deg, #3a0ca3, #4cc9f0);
+    background: url('./images/annie-spratt-QckxruozjRg-unsplash.jpg') center/cover no-repeat;
     border-radius: 10px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    opacity: 1 !important; /* Force opacity to 1 */
+}
+
+.team-graphic-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    display: block;
 }
 
 /* Contact Section */
