@@ -1,0 +1,100 @@
+{
+  "project": {
+    "name": "Mitigator.ai",
+    "description": "A professional landing page for an AI consulting business",
+    "local_path": "/Users/nihatg/Documents/GitHub/mitigator-ai",
+    "github_url": "https://github.com/prplbx/mitigator-ai",
+    "live_demo": "https://prplbx.github.io/mitigator-ai/",
+    "anthropic_workspace": {
+      "name": "mitigator-ai",
+      "url": "https://console.anthropic.com/workbench/9cf63813-047d-44df-b871-823e68b6bf8f"
+    }
+  },
+  "files": {
+    "html": [
+      "index.html",
+      "ai-tools.html",
+      "ai-governance.html"
+    ],
+    "css": [
+      "styles.css"
+    ],
+    "javascript": [
+      "script.js"
+    ],
+    "images": [
+      "images/alex-kotliarskyi-QBpZGqEMsKg-unsplash.jpg",
+      "images/annie-spratt-QckxruozjRg-unsplash.jpg",
+      "images/arnold-francisca-f77Bh3inUpE-unsplash.jpg",
+      "images/campaign-creators-gMsnXqILjp4-unsplash.jpg"
+    ],
+    "documentation": [
+      "README.md",
+      "PROJECT_SUMMARY.md"
+    ],
+    "metadata": [
+      "project-metadata.json"
+    ]
+  },
+  "technologies": [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "Font Awesome"
+  ],
+  "features": [
+    "Responsive design",
+    "Smooth scrolling navigation",
+    "Form validation",
+    "Animated elements on scroll",
+    "Lazy loading",
+    "Optimized images",
+    "SEO meta tags",
+    "ElevenLabs Convai AI support agent"
+  ],
+  "pages": {
+    "index": {
+      "sections": [
+        "Navigation",
+        "Hero",
+        "Services",
+        "Use Cases",
+        "About",
+        "Contact",
+        "Footer",
+        "AI Support Agent Widget"
+      ]
+    },
+    "ai-tools": {
+      "tools": [
+        "ChatGPT",
+        "Midjourney",
+        "GitHub Copilot",
+        "Runway",
+        "Suno",
+        "Claude",
+        "Jasper",
+        "DALL-E 3",
+        "Synthesia",
+        "Perplexity AI"
+      ]
+    },
+    "ai-governance": {
+      "frameworks": [
+        "Ethical AI Framework",
+        "AI Risk Management",
+        "Regulatory Compliance"
+      ],
+      "sections": [
+        "AI Governance Maturity Model",
+        "AI Governance Services"
+      ]
+    }
+  },
+  "deployment": {
+    "method": "GitHub Pages",
+    "branch": "main",
+    "local_setup": "Clone repository and open index.html in browser"
+  },
+  "last_updated": "2025-03-28"
+}
