@@ -14,9 +14,12 @@ Mitigator.ai is a professional landing page for an AI consulting business that s
 - **Anthropic Workspace URL**: https://console.anthropic.com/workbench/9cf63813-047d-44df-b871-823e68b6bf8f
 
 ## File Structure
-- **index.html**: Main landing page with services, use cases, about section, and contact form
+- **index.html**: Main landing page with services, use cases, about section, and HubSpot contact form
 - **ai-tools.html**: Page showcasing top 10 generative AI tools in 2025
 - **ai-governance.html**: Page about responsible AI governance frameworks
+- **privacy-policy.html**: Privacy policy page with legal disclaimers
+- **terms-of-service.html**: Terms of service page with legal disclaimers
+- **resources.html**: Curated AI resources including conference presentations, research papers, events, and learning materials
 - **styles.css**: Main stylesheet with responsive design
 - **script.js**: JavaScript functionality for animations, form validation, and interactions
 - **images/**: Directory containing image files used throughout the site
@@ -24,6 +27,8 @@ Mitigator.ai is a professional landing page for an AI consulting business that s
   - annie-spratt-QckxruozjRg-unsplash.jpg
   - arnold-francisca-f77Bh3inUpE-unsplash.jpg
   - campaign-creators-gMsnXqILjp4-unsplash.jpg
+- **resources/**: Directory containing downloadable resources
+  - AI-Risk-and-Governance.pdf
 - **README.md**: Project documentation
 - **PROJECT_SUMMARY.md**: This file - comprehensive project overview for reference
 
@@ -50,8 +55,8 @@ Mitigator.ai is a professional landing page for an AI consulting business that s
    - Services section (AI Strategy, Implementation, Analytics, Training)
    - Use cases section (AI Support Tech, Personal Assistant, Predictive Analytics, etc.)
    - About section with company information
-   - Contact form
-   - Footer with links
+   - HubSpot embedded contact form
+   - Footer with links to legal pages and resources
    - ElevenLabs Convai AI support agent widget (floating interface for visitor assistance)
 
 2. **AI Tools Page**:
@@ -65,6 +70,27 @@ Mitigator.ai is a professional landing page for an AI consulting business that s
    - Regulatory Compliance
    - AI Governance Maturity Model
    - AI Governance Services
+
+4. **Resources Page**:
+   - Conference Presentations section with downloadable PDFs
+   - Research Papers & Publications section
+   - Conferences & Events section
+   - Newsletters & Blogs section
+   - Learning Resources section
+   - AI Policy & Governance section
+
+5. **Privacy Policy Page**:
+   - Legal disclaimers and privacy information
+   - Data collection and usage policies
+   - User rights and responsibilities
+   - Contact information
+
+6. **Terms of Service Page**:
+   - Legal disclaimers and terms of use
+   - User responsibilities and limitations
+   - Intellectual property rights
+   - Liability limitations
+   - Applicable law information
 
 ## Deployment
 - The site is deployed using GitHub Pages from the main branch

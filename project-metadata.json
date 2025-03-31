@@ -14,7 +14,10 @@
     "html": [
       "index.html",
       "ai-tools.html",
-      "ai-governance.html"
+      "ai-governance.html",
+      "privacy-policy.html",
+      "terms-of-service.html",
+      "resources.html"
     ],
     "css": [
       "styles.css"
@@ -27,6 +30,9 @@
       "images/annie-spratt-QckxruozjRg-unsplash.jpg",
       "images/arnold-francisca-f77Bh3inUpE-unsplash.jpg",
       "images/campaign-creators-gMsnXqILjp4-unsplash.jpg"
+    ],
+    "resources": [
+      "resources/AI-Risk-and-Governance.pdf"
     ],
     "documentation": [
       "README.md",
@@ -45,7 +51,10 @@
   "features": [
     "Responsive design",
     "Smooth scrolling navigation",
-    "Form validation",
+    "HubSpot embedded contact form",
+    "AI resources library",
+    "Conference presentation downloads",
+    "Legal pages (Privacy Policy, Terms of Service)",
     "Animated elements on scroll",
     "Lazy loading",
     "Optimized images",
@@ -89,6 +98,38 @@
         "AI Governance Maturity Model",
         "AI Governance Services"
       ]
+    },
+    "resources": {
+      "sections": [
+        "Conference Presentations",
+        "Research Papers & Publications",
+        "Conferences & Events",
+        "Newsletters & Blogs",
+        "Learning Resources",
+        "AI Policy & Governance"
+      ]
+    },
+    "privacy-policy": {
+      "sections": [
+        "Introduction",
+        "Information We Collect",
+        "How We Use Your Information",
+        "Data Security",
+        "Your Legal Rights",
+        "Cookies",
+        "Contact Us"
+      ]
+    },
+    "terms-of-service": {
+      "sections": [
+        "Acceptance of Terms",
+        "Information Purposes Only",
+        "Professional Consultation",
+        "Use of Our Site",
+        "Intellectual Property Rights",
+        "Limitation of Liability",
+        "Applicable Law"
+      ]
     }
   },
   "deployment": {
@@ -96,5 +137,5 @@
     "branch": "main",
     "local_setup": "Clone repository and open index.html in browser"
   },
-  "last_updated": "2025-03-28"
+  "last_updated": "2025-03-31"
 }

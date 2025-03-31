@@ -3,14 +3,13 @@
 A professional landing page for mitigator.ai, an AI consulting business.
 
 ## Overview
+This repository contains a website for mitigator.ai, showcasing various AI consulting services and resources including:
 
-This repository contains a static landing page for mitigator.ai, showcasing various AI consulting services and use cases including:
-
-- AI Support Tech
-- AI Personal Assistant
-- Predictive Analytics
-- AI Security Solutions
-- Natural Language Processing
+- AI consulting services (Strategy, Implementation, Analytics, Training)
+- AI use cases (Support Tech, Personal Assistant, Predictive Analytics, etc.)
+- AI tools and governance frameworks
+- AI resources (Conference presentations, research papers, events, learning materials)
+- Legal pages (Privacy Policy, Terms of Service)
 - Process Automation
 
 ## Technologies Used
@@ -24,11 +23,15 @@ This repository contains a static landing page for mitigator.ai, showcasing vari
 
 - Responsive design for all device sizes
 - Smooth scrolling navigation
-- Form validation
+- HubSpot embedded contact form
+- Comprehensive resources page with AI research and learning materials
+- Conference presentation downloads
+- Legal pages with privacy policy and terms of service
 - Animated elements on scroll
 - Lazy loading for improved performance
 - Optimized images for faster loading
 - SEO meta tags for better search engine visibility
+- ElevenLabs Convai AI support agent widget
 
 ## Performance Optimizations
 
