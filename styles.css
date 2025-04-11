@@ -702,3 +702,248 @@ footer {
         margin: 20px auto;
     }
 }
+
+/* AI Governance Page Styles */
+.governance-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.governance-content h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.governance-content p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.framework-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.framework-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.framework-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.framework-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(67, 97, 238, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.framework-icon i {
+    font-size: 25px;
+    color: var(--primary-color);
+}
+
+.framework-title h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.framework-title p {
+    margin: 5px 0 0;
+    color: var(--gray-color);
+}
+
+.framework-content {
+    margin-bottom: 20px;
+}
+
+.framework-principles {
+    margin-bottom: 20px;
+}
+
+.framework-principles h4 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.framework-principles ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.framework-principles ul li {
+    margin-bottom: 5px;
+}
+
+.governance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.governance-table th {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: left;
+    padding: 15px;
+}
+
+.governance-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    background-color: white;
+}
+
+.governance-table tr:last-child td {
+    border-bottom: none;
+}
+
+.governance-table tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+.governance-hero-image {
+    background: url('./images/campaign-creators-gMsnXqILjp4-unsplash.jpg') center/cover no-repeat;
+}
+
+.section-header-large-margin {
+    margin-top: 60px;
+}
+
+.service-grid-margin {
+    margin-top: 30px;
+}
+
+/* AI Tools Page Styles */
+.blog-post {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.blog-post h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.blog-post p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.tool-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.tool-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tool-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(67, 97, 238, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.tool-icon i {
+    font-size: 25px;
+    color: var(--primary-color);
+}
+
+.tool-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+}
+
+.tool-title h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.tool-title p {
+    margin: 5px 0 0;
+    color: var(--gray-color);
+}
+
+.tool-content {
+    margin-bottom: 20px;
+}
+
+.tool-features {
+    margin-bottom: 20px;
+}
+
+.tool-features h4 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.tool-features ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.tool-features ul li {
+    margin-bottom: 5px;
+}
+
+.tool-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tool-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tool-example {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 15px;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
