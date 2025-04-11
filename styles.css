@@ -675,3 +675,30 @@ footer {
         width: 100%;
     }
 }
+
+/* Google Ad Containers */
+.ad-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.ad-container ins {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 250px;
+}
+
+/* Responsive ad container */
+@media (max-width: 768px) {
+    .ad-container {
+        padding: 15px;
+        margin: 20px auto;
+    }
+}
