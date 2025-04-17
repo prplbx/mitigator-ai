@@ -59,7 +59,8 @@
     "Lazy loading",
     "Optimized images",
     "SEO meta tags",
-    "ElevenLabs Convai AI support agent"
+    "ElevenLabs Convai AI support agent",
+    "Google AdSense integration with standard and in-article ads"
   ],
   "pages": {
     "index": {
@@ -137,5 +138,5 @@
     "branch": "main",
     "local_setup": "Clone repository and open index.html in browser"
   },
-  "last_updated": "2025-04-11"
+  "last_updated": "2025-04-17"
 }
