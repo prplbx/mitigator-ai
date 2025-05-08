@@ -8,10 +8,55 @@
     <meta name="author" content="mitigator.ai">
     
     <!-- SEO Meta Tags -->
+    <meta property="og:title" content="mitigator.ai - AI Consulting Solutions">
+    <meta property="og:description" content="mitigator.ai provides AI consulting solutions to help organizations harness the power of artificial intelligence for business transformation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mitigator.ai/">
+    <meta property="og:image" content="https://mitigator.ai/images/arnold-francisca-f77Bh3inUpE-unsplash.jpg">
+    
+    <link rel="canonical" href="https://mitigator.ai/" />
     
     <title>mitigator.ai - AI Consulting Solutions</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Preload critical assets -->
+    <link rel="preload" href="styles.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "mitigator.ai",
+      "url": "https://mitigator.ai/",
+      "logo": "https://mitigator.ai/images/arnold-francisca-f77Bh3inUpE-unsplash.jpg",
+      "description": "AI consulting solutions to help organizations harness the power of artificial intelligence for business transformation.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "US"
+      },
+      "telephone": "",
+      "email": "",
+      "foundingDate": "2022",
+      "sameAs": [],
+      "serviceType": ["AI Strategy Development", "AI Implementation", "AI Analytics", "AI Training"],
+      "areaServed": "Worldwide"
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W1C5331WG8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-W1C5331WG8');
+    </script>
     
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6867466150255348" crossorigin="anonymous"></script>
@@ -224,19 +269,19 @@
                     <div class="link-group">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="#">AI Strategy</a></li>
-                            <li><a href="#">Implementation</a></li>
-                            <li><a href="#">Analytics</a></li>
-                            <li><a href="#">Training</a></li>
+                            <li><a href="#services">AI Strategy</a></li>
+                            <li><a href="#services">Implementation</a></li>
+                            <li><a href="#services">Analytics</a></li>
+                            <li><a href="#services">Training</a></li>
                         </ul>
                     </div>
                     <div class="link-group">
                         <h4>Use Cases</h4>
                         <ul>
-                            <li><a href="#">Support Tech</a></li>
-                            <li><a href="#">Personal Assistant</a></li>
-                            <li><a href="#">Predictive Analytics</a></li>
-                            <li><a href="#">Security Solutions</a></li>
+                            <li><a href="#use-cases">Support Tech</a></li>
+                            <li><a href="#use-cases">Personal Assistant</a></li>
+                            <li><a href="#use-cases">Predictive Analytics</a></li>
+                            <li><a href="#use-cases">Security Solutions</a></li>
                         </ul>
                     </div>
                     <div class="link-group">
@@ -262,10 +307,19 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.min.js" defer></script>
     
     <!-- AI Support Agent Widget -->
     <elevenlabs-convai agent-id="uYmHv4M8A47xWgepCyfh"></elevenlabs-convai>
     <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+    
+    <!-- Cookie Consent Banner -->
+    <script type="text/javascript">
+    var _iub = _iub || [];
+    _iub.csConfiguration = {"siteId":4020516,"cookiePolicyId":91924392,"lang":"en","storage":{"useSiteId":true}};
+    </script>
+    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4020516.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 </body>
 </html>
