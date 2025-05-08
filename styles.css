@@ -723,6 +723,7 @@ footer {
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     position: relative;
+    min-height: 100px; /* Minimum height to prevent layout shifts */
 }
 
 /* Add decorative elements to ad container */
@@ -742,6 +743,25 @@ footer {
     width: 100%;
     height: auto;
     min-height: 250px;
+}
+
+/* Fix for empty ad iframes */
+.ad-container iframe[style*="background-color:transparent"] {
+    display: none !important; /* Hide empty iframes completely */
+}
+
+/* Ensure ad container has reasonable height when ads don't load */
+.ad-container:empty {
+    display: none; /* Hide entire container if completely empty */
+}
+
+/* Alternative styling for when ads are blocked/don't display */
+.adsbygoogle:not([data-adsbygoogle-status="done"]) {
+    min-height: 0 !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease;
 }
 
 /* AI Governance Page Styles */
