@@ -745,23 +745,41 @@ footer {
     min-height: 250px;
 }
 
-/* Fix for empty ad iframes */
-.ad-container iframe[style*="background-color:transparent"] {
-    display: none !important; /* Hide empty iframes completely */
+/* More aggressive fix for empty ad iframes */
+iframe[style*="background-color:transparent"],
+iframe[marginwidth="0"][marginheight="0"],
+iframe:empty,
+.ad-container iframe:not([src]),
+.ad-container iframe[style*="display: none"],
+iframe[frameborder="0"][scrolling="no"][marginwidth="0"][marginheight="0"] {
+    display: none !important; /* Hide problematic iframes completely */
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    overflow: hidden !important;
 }
 
 /* Ensure ad container has reasonable height when ads don't load */
 .ad-container:empty {
-    display: none; /* Hide entire container if completely empty */
+    display: none !important; /* Hide entire container if completely empty */
 }
 
 /* Alternative styling for when ads are blocked/don't display */
-.adsbygoogle:not([data-adsbygoogle-status="done"]) {
+.adsbygoogle:not([data-adsbygoogle-status="done"]),
+ins.adsbygoogle[data-ad-status="unfilled"] {
     min-height: 0 !important;
     height: 0 !important;
     max-height: 0 !important;
     overflow: hidden !important;
     transition: all 0.3s ease;
+    display: none !important;
+}
+
+/* Direct style for body tag with empty content */
+body[style="background-color:transparent"][marginwidth="0"][marginheight="0"] {
+    display: none !important;
 }
 
 /* AI Governance Page Styles */
