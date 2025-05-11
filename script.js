@@ -181,6 +181,46 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Animate counter numbers
+    const statCards = document.querySelectorAll('.stat-card');
+    
+    function animateCounter(element, target, duration) {
+        let start = 0;
+        const increment = target / (duration / 16); // 16ms is roughly 60fps
+        const counter = element.querySelector('.counter');
+        
+        const timer = setInterval(() => {
+            start += increment;
+            
+            if (start >= target) {
+                clearInterval(timer);
+                counter.textContent = target;
+            } else {
+                counter.textContent = Math.floor(start);
+            }
+        }, 16);
+    }
+    
+    function handleCounterAnimation() {
+        statCards.forEach(card => {
+            if (isInViewport(card) && !card.classList.contains('counted')) {
+                card.classList.add('counted');
+                const target = parseInt(card.getAttribute('data-count'));
+                
+                // Different durations based on number size for better visual effect
+                let duration = 2000; // default 2 seconds
+                if (target > 500) duration = 2500;
+                if (target < 50) duration = 1500;
+                
+                animateCounter(card, target, duration);
+            }
+        });
+    }
+    
+    // Check for counters in viewport on load and scroll
+    window.addEventListener('load', handleCounterAnimation);
+    window.addEventListener('scroll', handleCounterAnimation);
+    
     // Set initial state for animation
     serviceCards.forEach(card => {
         card.style.opacity = '0';
