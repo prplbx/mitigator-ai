@@ -36,24 +36,8 @@
             padding: 20px;
         }
         
-        .resource-category {
-            margin-bottom: 50px;
-        }
-        
-        .resource-category h2 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(67, 97, 238, 0.1);
-        }
-        
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .resource-card {
+        .resource-item {
+            margin-bottom: 40px;
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -61,34 +45,36 @@
             transition: all 0.3s ease;
         }
         
-        .resource-card:hover {
+        .resource-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
         
-        .resource-card h3 {
+        .resource-item h3 {
             margin-bottom: 10px;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
+            color: var(--primary-color);
         }
         
-        .resource-card p {
+        .resource-item p {
             color: var(--gray-color);
             margin-bottom: 15px;
+            line-height: 1.6;
         }
         
-        .resource-card .resource-link {
+        .resource-item .resource-link {
             display: inline-flex;
             align-items: center;
             font-weight: 600;
             color: var(--primary-color);
         }
         
-        .resource-card .resource-link i {
+        .resource-item .resource-link i {
             margin-left: 5px;
             transition: transform 0.3s ease;
         }
         
-        .resource-card .resource-link:hover i {
+        .resource-item .resource-link:hover i {
             transform: translateX(5px);
         }
         
@@ -100,7 +86,64 @@
             border-radius: 20px;
             font-size: 0.8rem;
             margin-right: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .resource-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 15px;
+        }
+        
+        .resource-meta .date {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+        
+        .resource-featured {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .resource-featured .resource-image {
+            flex: 0 0 150px;
+        }
+        
+        .resource-featured .resource-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .resource-featured .resource-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .resource-meta-info {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+            margin-bottom: 15px;
+        }
+        
+        .resource-meta-info span {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        
+        .resource-divider {
+            height: 1px;
+            background-color: rgba(67, 97, 238, 0.1);
+            margin: 60px 0 40px;
+        }
+        
+        .resource-heading {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -147,206 +190,268 @@
 
     <section class="resources-content">
         <div class="container">
-            <div class="resource-category">
-                <h2>Conference Presentations</h2>
-                <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
-                    <div style="flex: 0 0 150px;">
-                        <img src="./images/campaign-creators-gMsnXqILjp4-unsplash.jpg" alt="AI Risk and Governance Presentation" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <!-- #1: AI in Software Development -->
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
+                        <span class="resource-tag">Blog Post</span>
+                        <span class="resource-tag">Software Development</span>
                     </div>
-                    <div style="flex: 1; min-width: 300px;">
-                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                            <span class="resource-tag" style="margin-bottom: 0;">Presentation</span>
-                            <span class="resource-tag" style="margin-bottom: 0;">AI Governance</span>
-                            <span style="margin-left: auto; font-size: 0.9rem;"><strong>March 27, 2025</strong></span>
+                    <div class="date"><strong>May 13, 2025</strong></div>
+                </div>
+                <div class="resource-featured">
+                    <div class="resource-image">
+                        <img src="./images/alex-kotliarskyi-QBpZGqEMsKg-unsplash.jpg" alt="AI in Software Development">
+                    </div>
+                    <div class="resource-content">
+                        <h3>AI in Software Development: Transforming the Development Lifecycle</h3>
+                        <p>A comprehensive look at how AI is changing software development, from code generation to testing, with practical insights on tools like GitHub Copilot and strategies for working with AI assistants.</p>
+                        <div class="resource-meta-info">
+                            <span><strong>Author:</strong> <a href="https://www.linkedin.com/in/nihatguven/" target="_blank">Nihat Guven</a></span>
+                            <span><strong>Read time:</strong> 12 minutes</span>
                         </div>
-                        <h3 style="margin-top: 5px; margin-bottom: 10px;">AI Risk and Governance</h3>
-                        <p style="margin-bottom: 10px;">A comprehensive overview of AI risk management frameworks and governance strategies for organizations implementing artificial intelligence solutions.</p>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div>
-                                <span style="font-size: 0.9rem;"><strong>Conference:</strong> ISACA Atlanta 2025 Geek Week</span><br>
-                                <span style="font-size: 0.9rem;"><strong>Presenter:</strong> <a href="https://www.linkedin.com/in/nihatguven/" target="_blank">Nihat Guven</a></span>
-                            </div>
-                            <a href="./resources/AI-Risk-and-Governance.pdf" class="resource-link" target="_blank">Download <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        <a href="./resources/ai-in-software-development.html" class="resource-link">Read Article <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
-            
-            <div class="resource-category">
-                <h2>Research Papers & Publications</h2>
-                <div class="resource-grid">
-                    <div class="resource-card">
-                        <span class="resource-tag">Research</span>
+
+            <!-- #2: Responsible AI Best Practices -->
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
+                        <span class="resource-tag">Blog Post</span>
+                        <span class="resource-tag">AI Governance</span>
+                        <span class="resource-tag">Best Practices</span>
+                    </div>
+                    <div class="date"><strong>May 13, 2025</strong></div>
+                </div>
+                <div class="resource-featured">
+                    <div class="resource-image">
+                        <img src="./images/arnold-francisca-f77Bh3inUpE-unsplash.jpg" alt="Responsible AI Best Practices">
+                    </div>
+                    <div class="resource-content">
+                        <h3>Five Best Practices for Implementing Responsible AI in Enterprises</h3>
+                        <p>A strategic guide to ethical and effective AI adoption for organizations, covering governance frameworks, transparency, diverse teams, testing, and continuous improvement.</p>
+                        <div class="resource-meta-info">
+                            <span><strong>Author:</strong> <a href="https://www.linkedin.com/in/nihatguven/" target="_blank">Nihat Guven</a></span>
+                            <span><strong>Read time:</strong> 10 minutes</span>
+                        </div>
+                        <a href="./resources/responsible-ai-best-practices.html" class="resource-link">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- #3: AI Risk and Governance Presentation -->
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
+                        <span class="resource-tag">Conference Presentation</span>
+                        <span class="resource-tag">AI Governance</span>
+                    </div>
+                    <div class="date"><strong>March 27, 2025</strong></div>
+                </div>
+                <div class="resource-featured">
+                    <div class="resource-image">
+                        <img src="./images/campaign-creators-gMsnXqILjp4-unsplash.jpg" alt="AI Risk and Governance Presentation">
+                    </div>
+                    <div class="resource-content">
+                        <h3>AI Risk and Governance</h3>
+                        <p>A comprehensive overview of AI risk management frameworks and governance strategies for organizations implementing artificial intelligence solutions.</p>
+                        <div class="resource-meta-info">
+                            <span><strong>Conference:</strong> ISACA Atlanta 2025 Geek Week</span>
+                            <span><strong>Presenter:</strong> <a href="https://www.linkedin.com/in/nihatguven/" target="_blank">Nihat Guven</a></span>
+                        </div>
+                        <a href="./resources/AI-Risk-and-Governance.pdf" class="resource-link" target="_blank">Download PDF <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resource-divider"></div>
+            <h2 class="resource-heading">Additional AI Resources</h2>
+
+            <!-- Research Resources -->
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
+                        <span class="resource-tag">Research Repository</span>
                         <span class="resource-tag">Machine Learning</span>
-                        <h3>arXiv.org AI Research</h3>
-                        <p>Access thousands of preprints on artificial intelligence, machine learning, and computational statistics.</p>
-                        <a href="https://arxiv.org/list/cs.AI/recent" class="resource-link" target="_blank">Explore Papers <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="resource-card">
-                        <span class="resource-tag">Research</span>
+                </div>
+                <h3>arXiv.org AI Research</h3>
+                <p>Access thousands of preprints on artificial intelligence, machine learning, and computational statistics. This open-access archive is a critical resource for staying current with cutting-edge research in AI and related fields.</p>
+                <a href="https://arxiv.org/list/cs.AI/recent" class="resource-link" target="_blank">Explore Papers <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
+                        <span class="resource-tag">Research Repository</span>
                         <span class="resource-tag">Deep Learning</span>
-                        <h3>Google AI Research</h3>
-                        <p>Cutting-edge research publications from Google's AI teams covering various aspects of artificial intelligence.</p>
-                        <a href="https://ai.google/research/pubs/" class="resource-link" target="_blank">View Publications <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="resource-card">
-                        <span class="resource-tag">Research</span>
+                </div>
+                <h3>Google AI Research</h3>
+                <p>Cutting-edge research publications from Google's AI teams covering various aspects of artificial intelligence, from fundamental algorithms to applied machine learning and AI ethics considerations.</p>
+                <a href="https://ai.google/research/pubs/" class="resource-link" target="_blank">View Publications <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
+                        <span class="resource-tag">Research Repository</span>
                         <span class="resource-tag">Ethics</span>
-                        <h3>AI Ethics Papers</h3>
-                        <p>Research focused on ethical considerations, fairness, and responsible AI development.</p>
-                        <a href="https://www.partnershiponai.org/research/" class="resource-link" target="_blank">Read Research <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+                <h3>AI Ethics Papers</h3>
+                <p>Research focused on ethical considerations, fairness, and responsible AI development. These papers explore the societal implications of AI systems and propose frameworks for more equitable and beneficial AI.</p>
+                <a href="https://www.partnershiponai.org/research/" class="resource-link" target="_blank">Read Research <i class="fas fa-arrow-right"></i></a>
             </div>
-            
-            <div class="resource-category">
-                <h2>Conferences & Events</h2>
-                <div class="resource-grid">
-                    <div class="resource-card">
-                        <span class="resource-tag">Conference</span>
-                        <span class="resource-tag">Annual</span>
-                        <h3>NeurIPS</h3>
-                        <p>Neural Information Processing Systems - One of the premier conferences on machine learning and computational neuroscience.</p>
-                        <a href="https://neurips.cc/" class="resource-link" target="_blank">Conference Details <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <span class="resource-tag">Conference</span>
-                        <span class="resource-tag">Industry</span>
-                        <h3>AI Summit</h3>
-                        <p>Global conference series focused on practical applications of AI for business transformation.</p>
-                        <a href="https://theaisummit.com/" class="resource-link" target="_blank">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <span class="resource-tag">Conference</span>
-                        <span class="resource-tag">Research</span>
-                        <h3>ICML</h3>
-                        <p>International Conference on Machine Learning - Leading academic conference in machine learning.</p>
-                        <a href="https://icml.cc/" class="resource-link" target="_blank">Visit Website <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="resource-category">
-                <h2>Newsletters & Blogs</h2>
-                <div class="resource-grid">
-                    <div class="resource-card">
-                        <span class="resource-tag">Newsletter</span>
-                        <span class="resource-tag">Weekly</span>
-                        <h3>Import AI</h3>
-                        <p>Weekly newsletter covering the most important AI research, applications, and policy developments.</p>
-                        <a href="https://jack-clark.net/" class="resource-link" target="_blank">Subscribe <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <span class="resource-tag">Blog</span>
-                        <span class="resource-tag">Technical</span>
-                        <h3>Distill.pub</h3>
-                        <p>Clear explanations of machine learning research with interactive visualizations.</p>
-                        <a href="https://distill.pub/" class="resource-link" target="_blank">Read Articles <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <span class="resource-tag">Newsletter</span>
-                        <span class="resource-tag">Industry</span>
-                        <h3>The Algorithm</h3>
-                        <p>MIT Technology Review's AI newsletter covering the latest developments and their implications.</p>
-                        <a href="https://www.technologyreview.com/collection/the-algorithm/" class="resource-link" target="_blank">Get Updates <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="resource-category">
-                <h2>Learning Resources</h2>
-                <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
-                    <div style="flex: 0 0 150px;">
-                        <img src="./images/alex-kotliarskyi-QBpZGqEMsKg-unsplash.jpg" alt="AI in Software Development" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                    </div>
-                    <div style="flex: 1; min-width: 300px;">
-                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                            <span class="resource-tag" style="margin-bottom: 0;">Blog Post</span>
-                            <span class="resource-tag" style="margin-bottom: 0;">Software Development</span>
-                            <span style="margin-left: auto; font-size: 0.9rem;"><strong>May 13, 2025</strong></span>
-                        </div>
-                        <h3 style="margin-top: 5px; margin-bottom: 10px;">AI in Software Development: Transforming the Development Lifecycle</h3>
-                        <p style="margin-bottom: 10px;">A comprehensive look at how AI is changing software development, from code generation to testing, with practical insights on tools like GitHub Copilot and strategies for working with AI assistants.</p>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div>
-                                <span style="font-size: 0.9rem;"><strong>Author:</strong> <a href="https://www.linkedin.com/in/nihatguven/" target="_blank">Nihat Guven</a></span><br>
-                                <span style="font-size: 0.9rem;"><strong>Read time:</strong> 12 minutes</span>
-                            </div>
-                            <a href="./resources/ai-in-software-development.html" class="resource-link">Read Article <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="resource-grid">
-                    <div class="resource-card">
+
+            <!-- Learning Resources -->
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
                         <span class="resource-tag">Course</span>
-                        <span class="resource-tag">Free</span>
-                        <h3>Fast.ai</h3>
-                        <p>Practical deep learning courses designed to get you building state-of-the-art models quickly.</p>
-                        <a href="https://www.fast.ai/" class="resource-link" target="_blank">Start Learning <i class="fas fa-arrow-right"></i></a>
+                        <span class="resource-tag">Practical</span>
                     </div>
-                    <div class="resource-card">
+                </div>
+                <h3>Fast.ai</h3>
+                <p>Practical deep learning courses designed to get you building state-of-the-art models quickly. These free courses focus on a hands-on approach, making advanced deep learning techniques accessible to practitioners with coding experience.</p>
+                <a href="https://www.fast.ai/" class="resource-link" target="_blank">Start Learning <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
                         <span class="resource-tag">Course</span>
                         <span class="resource-tag">Academic</span>
-                        <h3>Stanford CS231n</h3>
-                        <p>Convolutional Neural Networks for Visual Recognition - comprehensive course materials available online.</p>
-                        <a href="http://cs231n.stanford.edu/" class="resource-link" target="_blank">Access Materials <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="resource-card">
+                </div>
+                <h3>Stanford CS231n</h3>
+                <p>Convolutional Neural Networks for Visual Recognition - comprehensive course materials available online. This Stanford University course provides in-depth coverage of deep learning for computer vision applications.</p>
+                <a href="http://cs231n.stanford.edu/" class="resource-link" target="_blank">Access Materials <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
                         <span class="resource-tag">Book</span>
                         <span class="resource-tag">Comprehensive</span>
-                        <h3>Deep Learning Book</h3>
-                        <p>Comprehensive textbook by Ian Goodfellow, Yoshua Bengio, and Aaron Courville, available online.</p>
-                        <a href="https://www.deeplearningbook.org/" class="resource-link" target="_blank">Read Online <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+                <h3>Deep Learning Book</h3>
+                <p>Comprehensive textbook by Ian Goodfellow, Yoshua Bengio, and Aaron Courville, available online. This authoritative resource covers the full spectrum of deep learning theory and applications.</p>
+                <a href="https://www.deeplearningbook.org/" class="resource-link" target="_blank">Read Online <i class="fas fa-arrow-right"></i></a>
             </div>
-            
-            <div class="resource-category">
-                <h2>AI Policy & Governance</h2>
-                <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
-                    <div style="flex: 0 0 150px;">
-                        <img src="./images/arnold-francisca-f77Bh3inUpE-unsplash.jpg" alt="Responsible AI Best Practices" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                    </div>
-                    <div style="flex: 1; min-width: 300px;">
-                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                            <span class="resource-tag" style="margin-bottom: 0;">Blog Post</span>
-                            <span class="resource-tag" style="margin-bottom: 0;">Best Practices</span>
-                            <span style="margin-left: auto; font-size: 0.9rem;"><strong>May 13, 2025</strong></span>
-                        </div>
-                        <h3 style="margin-top: 5px; margin-bottom: 10px;">Five Best Practices for Implementing Responsible AI in Enterprises</h3>
-                        <p style="margin-bottom: 10px;">A strategic guide to ethical and effective AI adoption for organizations, covering governance frameworks, transparency, diverse teams, testing, and continuous improvement.</p>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div>
-                                <span style="font-size: 0.9rem;"><strong>Author:</strong> <a href="https://www.linkedin.com/in/nihatguven/" target="_blank">Nihat Guven</a></span><br>
-                                <span style="font-size: 0.9rem;"><strong>Read time:</strong> 10 minutes</span>
-                            </div>
-                            <a href="./resources/responsible-ai-best-practices.html" class="resource-link">Read Article <i class="fas fa-arrow-right"></i></a>
-                        </div>
+
+            <!-- Conferences & Events -->
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
+                        <span class="resource-tag">Conference</span>
+                        <span class="resource-tag">Academic</span>
                     </div>
                 </div>
-                <div class="resource-grid">
-                    <div class="resource-card">
-                        <span class="resource-tag">Policy</span>
+                <h3>NeurIPS (Neural Information Processing Systems)</h3>
+                <p>One of the premier conferences on machine learning and computational neuroscience. NeurIPS brings together researchers from academia and industry to present and discuss the latest advances in neural networks and machine learning.</p>
+                <a href="https://neurips.cc/" class="resource-link" target="_blank">Conference Details <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
+                        <span class="resource-tag">Conference</span>
+                        <span class="resource-tag">Industry</span>
+                    </div>
+                </div>
+                <h3>AI Summit</h3>
+                <p>Global conference series focused on practical applications of AI for business transformation. These events showcase real-world AI implementations and business strategies for leveraging artificial intelligence effectively.</p>
+                <a href="https://theaisummit.com/" class="resource-link" target="_blank">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
+                        <span class="resource-tag">Conference</span>
                         <span class="resource-tag">Research</span>
-                        <h3>AI Now Institute</h3>
-                        <p>Research organization focused on the social implications of artificial intelligence.</p>
-                        <a href="https://ainowinstitute.org/" class="resource-link" target="_blank">Explore Research <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <span class="resource-tag">Governance</span>
-                        <span class="resource-tag">Ethics</span>
-                        <h3>Partnership on AI</h3>
-                        <p>Multi-stakeholder organization developing best practices for AI technologies.</p>
-                        <a href="https://www.partnershiponai.org/" class="resource-link" target="_blank">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="resource-card">
-                        <span class="resource-tag">Policy</span>
-                        <span class="resource-tag">Global</span>
-                        <h3>OECD AI Policy Observatory</h3>
-                        <p>Platform for policy makers to share and shape AI policies across countries.</p>
-                        <a href="https://oecd.ai/" class="resource-link" target="_blank">Visit Observatory <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+                <h3>ICML (International Conference on Machine Learning)</h3>
+                <p>Leading academic conference in machine learning, featuring cutting-edge research papers, workshops, and tutorials. ICML is one of the most prestigious venues for presenting new research in machine learning algorithms and applications.</p>
+                <a href="https://icml.cc/" class="resource-link" target="_blank">Visit Website <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Newsletters & Blogs -->
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
+                        <span class="resource-tag">Newsletter</span>
+                        <span class="resource-tag">Weekly</span>
+                    </div>
+                </div>
+                <h3>Import AI</h3>
+                <p>Weekly newsletter covering the most important AI research, applications, and policy developments. Import AI provides insightful analysis and curated links to significant AI advancements and discussions.</p>
+                <a href="https://jack-clark.net/" class="resource-link" target="_blank">Subscribe <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
+                        <span class="resource-tag">Blog</span>
+                        <span class="resource-tag">Technical</span>
+                    </div>
+                </div>
+                <h3>Distill.pub</h3>
+                <p>Clear explanations of machine learning research with interactive visualizations. Distill publishes explorable explanations of machine learning concepts, making complex ideas more approachable through interactive demonstrations.</p>
+                <a href="https://distill.pub/" class="resource-link" target="_blank">Read Articles <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
+                        <span class="resource-tag">Newsletter</span>
+                        <span class="resource-tag">Industry</span>
+                    </div>
+                </div>
+                <h3>The Algorithm</h3>
+                <p>MIT Technology Review's AI newsletter covering the latest developments and their implications. This newsletter provides perspective on how AI technologies are impacting society, business, and policy.</p>
+                <a href="https://www.technologyreview.com/collection/the-algorithm/" class="resource-link" target="_blank">Get Updates <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Policy & Governance -->
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
+                        <span class="resource-tag">Policy Organization</span>
+                        <span class="resource-tag">Research</span>
+                    </div>
+                </div>
+                <h3>AI Now Institute</h3>
+                <p>Research organization focused on the social implications of artificial intelligence. The AI Now Institute produces interdisciplinary research on how AI systems are affecting social domains such as labor, healthcare, and civil rights.</p>
+                <a href="https://ainowinstitute.org/" class="resource-link" target="_blank">Explore Research <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
+                        <span class="resource-tag">Governance Organization</span>
+                        <span class="resource-tag">Ethics</span>
+                    </div>
+                </div>
+                <h3>Partnership on AI</h3>
+                <p>Multi-stakeholder organization developing best practices for AI technologies. Partnership on AI brings together diverse voices from industry, academia, and civil society to ensure AI technologies benefit people and society.</p>
+                <a href="https://www.partnershiponai.org/" class="resource-link" target="_blank">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resource-item">
+                <div class="resource-meta">
+                    <div>
+                        <span class="resource-tag">Policy Organization</span>
+                        <span class="resource-tag">Global</span>
+                    </div>
+                </div>
+                <h3>OECD AI Policy Observatory</h3>
+                <p>Platform for policy makers to share and shape AI policies across countries. The Observatory provides data and analysis on AI policy initiatives worldwide, helping to foster a global dialogue on AI governance.</p>
+                <a href="https://oecd.ai/" class="resource-link" target="_blank">Visit Observatory <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
