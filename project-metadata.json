@@ -34,7 +34,8 @@
     "resources": [
       "resources/AI-Risk-and-Governance.pdf",
       "resources/responsible-ai-best-practices.html",
-      "resources/ai-in-software-development.html"
+      "resources/ai-in-software-development.html",
+      "resources/AI in Software Development.pdf"
     ],
     "documentation": [
       "README.md",
