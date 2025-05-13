@@ -86,8 +86,8 @@ Mitigator.ai is a professional landing page for an AI consulting business that s
    - Research Papers & Publications section
    - Conferences & Events section
    - Newsletters & Blogs section
-   - Learning Resources section
-   - AI Policy & Governance section
+   - Learning Resources section (including blog post: "AI in Software Development: Transforming the Development Lifecycle")
+   - AI Policy & Governance section (including blog post: "Five Best Practices for Implementing Responsible AI in Enterprises")
 
 5. **Privacy Policy Page**:
    - Legal disclaimers and privacy information

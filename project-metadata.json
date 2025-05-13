@@ -32,7 +32,9 @@
       "images/campaign-creators-gMsnXqILjp4-unsplash.jpg"
     ],
     "resources": [
-      "resources/AI-Risk-and-Governance.pdf"
+      "resources/AI-Risk-and-Governance.pdf",
+      "resources/responsible-ai-best-practices.html",
+      "resources/ai-in-software-development.html"
     ],
     "documentation": [
       "README.md",

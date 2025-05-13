@@ -20,9 +20,21 @@
   </url>
   <url>
     <loc>https://mitigator.ai/resources.html</loc>
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2025-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mitigator.ai/resources/responsible-ai-best-practices.html</loc>
+    <lastmod>2025-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mitigator.ai/resources/ai-in-software-development.html</loc>
+    <lastmod>2025-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mitigator.ai/privacy-policy.html</loc>
