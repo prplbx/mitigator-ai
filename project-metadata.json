@@ -1,7 +1,7 @@
 {
   "project": {
     "name": "Mitigator.ai",
-    "description": "A professional landing page for an AI consulting business",
+    "description": "A professional landing page for a nonprofit organization focused on AI governance and education",
     "local_path": "/Users/nihatg/Documents/GitHub/mitigator-ai",
     "github_url": "https://github.com/prplbx/mitigator-ai",
     "live_demo": "https://prplbx.github.io/mitigator-ai/",
@@ -60,7 +60,9 @@
     "Legal pages (Privacy Policy, Terms of Service)",
     "Animated elements on scroll",
     "Animated stats counters",
-    "Client success stories/testimonials section",
+    "Impact stories/testimonials section",
+    "Donation and volunteer opportunities",
+    "Nonprofit mission and values statement",
     "Lazy loading",
     "Optimized images",
     "SEO meta tags",
@@ -78,10 +80,11 @@
         "Navigation",
         "Hero",
         "Stats Counter",
-        "Services",
+        "Mission",
         "Use Cases",
-        "Client Success Stories",
+        "Impact Stories",
         "About",
+        "Donate",
         "Contact",
         "Footer",
         "AI Support Agent Widget"
@@ -109,7 +112,9 @@
       ],
       "sections": [
         "AI Governance Maturity Model",
-        "AI Governance Services"
+        "AI Governance Resources",
+        "Community Programs",
+        "Educational Initiatives"
       ]
     },
     "resources": {

@@ -1,11 +1,13 @@
 # mitigator.ai
 
-A professional landing page for mitigator.ai, an AI consulting business.
+A professional landing page for mitigator.ai, a nonprofit organization focused on AI governance and education.
 
 ## Overview
-This repository contains a website for mitigator.ai, showcasing various AI consulting services and resources including:
+This repository contains a website for mitigator.ai, showcasing various AI governance resources and educational materials including:
 
-- AI consulting services (Strategy, Implementation, Analytics, Training)
+- AI governance frameworks and best practices
+- AI risk mitigation strategies
+- AI educational resources and training materials
 - AI use cases (Support Tech, Personal Assistant, Predictive Analytics, etc.)
 - AI tools and governance frameworks
 - AI resources (Conference presentations, research papers, events, learning materials)

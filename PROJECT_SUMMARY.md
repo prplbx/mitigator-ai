@@ -3,7 +3,7 @@
 This document provides a comprehensive overview of the mitigator.ai project to serve as a reference for future development tasks.
 
 ## Project Overview
-Mitigator.ai is a professional landing page for an AI consulting business that showcases various AI consulting services and use cases. The website is designed to be responsive, visually appealing, and optimized for performance.
+Mitigator.ai is a professional landing page for a nonprofit organization focused on AI governance and education. The website showcases various AI governance frameworks, risk mitigation strategies, educational resources, and use cases. The website is designed to be responsive, visually appealing, and optimized for performance.
 
 ## Project Details
 - **Project Name**: Mitigator.ai
@@ -61,10 +61,10 @@ Mitigator.ai is a professional landing page for an AI consulting business that s
    - Navigation menu
    - Hero section with call-to-action
    - Stats Counter section with animated metrics
-   - Services section (AI Strategy, Implementation, Analytics, Training)
+   - Mission section (AI Governance, Education, Risk Mitigation, Community Building)
    - Use cases section (AI Support Tech, Personal Assistant, Predictive Analytics, etc.)
-   - Client Success Stories/Testimonials section
-   - About section with company information
+   - Impact Stories/Testimonials section
+   - About section with organization information
    - HubSpot embedded contact form
    - Footer with links to legal pages and resources
    - ElevenLabs Convai AI support agent widget (floating interface for visitor assistance)
@@ -79,7 +79,7 @@ Mitigator.ai is a professional landing page for an AI consulting business that s
    - AI Risk Management
    - Regulatory Compliance
    - AI Governance Maturity Model
-   - AI Governance Services
+   - AI Governance Resources
 
 4. **Resources Page**:
    - Chronological list of resources with featured content at the top
@@ -115,4 +115,5 @@ Mitigator.ai is a professional landing page for an AI consulting business that s
 - Google AdSense ads are strategically placed throughout the site:
   - Standard display ads in dedicated ad containers
   - In-article ads in the article content pages (ai-tools.html and ai-governance.html)
-- Last major update: May 11, 2025 - Added animated stats counters, client testimonials section, and improved overall UI
+- Donation and volunteer opportunities are highlighted throughout the site
+- Last major update: May 11, 2025 - Added animated stats counters, impact stories section, and improved overall UI
