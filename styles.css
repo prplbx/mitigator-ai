@@ -901,28 +901,40 @@ footer {
 .ad-container {
     width: 100%;
     max-width: 1200px;
-    margin: 2rem auto;
+    margin: 3rem auto;
     padding: 1.5rem;
-    background-color: white;
+    background-color: rgba(249, 250, 251, 0.8);
     border-radius: var(--radius-lg);
     border: 1px solid var(--gray-light);
     text-align: center;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     position: relative;
-    min-height: 100px; /* Minimum height to prevent layout shifts */
+    min-height: 90px;
+    transition: all 0.3s ease;
 }
 
-/* Add decorative elements to ad container */
+/* Nonprofit context label */
 .ad-container::before {
+    content: "Sponsored Content";
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    font-size: 0.75rem;
+    color: var(--gray-color);
+    font-weight: 500;
+}
+
+/* More subtle and integrated styling */
+.ad-container::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 8px;
+    height: 3px;
     background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    opacity: 0.7;
 }
 
 .ad-container ins {
@@ -932,41 +944,42 @@ footer {
     min-height: 250px;
 }
 
-/* More aggressive fix for empty ad iframes */
-iframe[style*="background-color:transparent"],
-iframe[marginwidth="0"][marginheight="0"],
-iframe:empty,
-.ad-container iframe:not([src]),
-.ad-container iframe[style*="display: none"],
-iframe[frameborder="0"][scrolling="no"][marginwidth="0"][marginheight="0"] {
-    display: none !important; /* Hide problematic iframes completely */
-    height: 0 !important;
-    min-height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border: none !important;
-    overflow: hidden !important;
+/* Handle empty or problematic ad containers more gracefully */
+.ad-container:empty,
+.ad-container ins:empty {
+    min-height: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    display: none;
 }
 
-/* Ensure ad container has reasonable height when ads don't load */
-.ad-container:empty {
-    display: none !important; /* Hide entire container if completely empty */
+/* Support message for ads */
+.ad-container .ad-support-message {
+    font-size: 0.7rem;
+    color: var(--gray-color);
+    position: absolute;
+    bottom: 0.3rem;
+    right: 1rem;
+    margin: 0;
+    opacity: 0.8;
 }
 
-/* Alternative styling for when ads are blocked/don't display */
-.adsbygoogle:not([data-adsbygoogle-status="done"]),
-ins.adsbygoogle[data-ad-status="unfilled"] {
-    min-height: 0 !important;
-    height: 0 !important;
-    max-height: 0 !important;
-    overflow: hidden !important;
-    transition: all 0.3s ease;
-    display: none !important;
-}
-
-/* Direct style for body tag with empty content */
-body[style="background-color:transparent"][marginwidth="0"][marginheight="0"] {
-    display: none !important;
+/* Better responsive handling */
+@media (max-width: 768px) {
+    .ad-container {
+        margin: 2rem auto;
+        padding: 1rem;
+    }
+    
+    .ad-container::before {
+        font-size: 0.7rem;
+    }
+    
+    .ad-container .ad-support-message {
+        display: none;
+    }
 }
 
 /* AI Governance Page Styles */

@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Initialize ad lazy loading
+    handleAdLazyLoading();
+    
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('nav a, .hero-buttons a, .cta a');
     
@@ -267,6 +270,54 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', handleLazyLoad);
     }
     
+    // Function to handle lazy loading of ads
+    function handleAdLazyLoading() {
+        const adContainers = document.querySelectorAll('.ad-container:not(.top-ad)');
+        
+        // No ad containers found or all are top ads, exit early
+        if (adContainers.length === 0) return;
+        
+        // Add support message to all ad containers
+        adContainers.forEach(container => {
+            const supportMsg = document.createElement('p');
+            supportMsg.className = 'ad-support-message';
+            supportMsg.textContent = 'Ad revenue supports our nonprofit mission';
+            container.appendChild(supportMsg);
+        });
+        
+        const options = {
+            rootMargin: '200px', // Load ads when they're 200px from viewport
+            threshold: 0
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const adContainer = entry.target;
+                    const adScript = adContainer.querySelector('script');
+                    const adIns = adContainer.querySelector('ins');
+                    
+                    if (adIns && !adContainer.classList.contains('loaded')) {
+                        // Execute the adsbygoogle push command
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        adContainer.classList.add('loaded');
+                        
+                        // Log for debugging
+                        console.log('Ad loaded via lazy loading:', adIns.dataset.adSlot);
+                    }
+                    
+                    // Unobserve after loading
+                    observer.unobserve(adContainer);
+                }
+            });
+        }, options);
+        
+        // Observe all ad containers except the top one
+        adContainers.forEach(container => {
+            observer.observe(container);
+        });
+    }
+    
     // Add CSS for error and success messages
     const style = document.createElement('style');
     style.textContent = `
@@ -296,4 +347,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
+    
+    // Prevent ads from causing layout shifts
+    window.addEventListener('load', function() {
+        // Add a small delay to ensure ads have been processed
+        setTimeout(() => {
+            document.querySelectorAll('.ad-container ins').forEach(ins => {
+                // If the ad didn't load properly
+                if (!ins.getAttribute('data-ad-status') || ins.getAttribute('data-ad-status') === 'unfilled') {
+                    const container = ins.closest('.ad-container');
+                    if (container) {
+                        container.style.display = 'none';
+                    }
+                }
+            });
+        }, 2000);
+    });
 });

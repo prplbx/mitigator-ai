@@ -83,6 +83,7 @@ This document establishes the foundational rules and best practices for developm
 
 ## 🚀 Performance Optimization
 - **Minify CSS and JavaScript** for production.
+- **Always regenerate minified JavaScript files** after any changes to the original files to ensure all functionality is included and properly synchronized.
 - **Optimize images** using appropriate formats and compression.
 - **Implement lazy loading** for below-the-fold images.
 - **Minimize HTTP requests** by combining files where appropriate.
