@@ -91,6 +91,35 @@ Each content type has a standardized template to ensure consistency. Templates a
 - **Updates**: Make necessary updates based on new information
 - **Archive**: Archive outdated content when appropriate
 
+### 6. Content Update Process
+
+To efficiently update existing content, follow this standardized process:
+
+#### Preparation
+1. **Identify Update Need**: Determine what content requires updating and why
+2. **Complete Update Tracker**: Fill out the [content_update_tracker.md](templates/content_update_tracker.md) template
+3. **Create GitHub Issue**: Document the planned update as described in [github_content_workflow.md](templates/github_content_workflow.md)
+
+#### Implementation
+1. **Follow GitHub Workflow**: Create a branch, make updates, and submit PR per [workflow guidelines](templates/github_content_workflow.md)
+2. **Track Changes**: Document all changes in the Content Update Tracker
+3. **Test Content**: Use the [content_testing_checklist.md](templates/content_testing_checklist.md) to verify all aspects of the updated content
+
+#### Review & Publishing
+1. **Peer Review**: Have appropriate team members review the updates
+2. **Address Feedback**: Make any necessary revisions
+3. **Final Approval**: Obtain final approval from content owner
+4. **Publish & Monitor**: Deploy the updated content and track performance
+
+#### Update Types & Timelines
+
+| Update Type | Description | Timeline | Review Process |
+|-------------|-------------|----------|----------------|
+| **Critical** | Factual errors, broken functionality | Same day | Expedited review |
+| **Regular** | New information, statistics, examples | 1-2 weeks | Standard review |
+| **Scheduled** | Planned content refreshes | Per content calendar | Comprehensive review |
+| **Minor** | Typos, formatting, links | Batch monthly | Editor review only |
+
 ## SEO Guidelines
 
 ### Keyword Strategy
