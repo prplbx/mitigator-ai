@@ -52,6 +52,12 @@ Description: ${project.description}
 GitHub: ${project.github_url}
 Live Demo: ${project.live_demo}
 
+Documentation:
+- README.md - Project overview and entry point
+- DEVELOPMENT.md - Development guidelines, workflow, and tasks
+- CONTENT.md - Content management process and implementation
+- project-metadata.json - Structured data about the project
+
 Technologies: ${metadata.technologies.join(', ')}
 
 Key Features:
@@ -61,8 +67,8 @@ Pages:
 - index.html (Main landing page)
 - ai-tools.html (Top 10 Generative AI Tools)
 - ai-governance.html (AI Governance Framework)
-
-For more details, see PROJECT_SUMMARY.md
+- resources.html (AI Resources Library)
+- And more, see README.md for details
     `.trim();
   }
 

@@ -39,10 +39,17 @@
     ],
     "documentation": [
       "README.md",
-      "PROJECT_SUMMARY.md"
-    ],
-    "metadata": [
+      "DEVELOPMENT.md",
+      "CONTENT.md",
       "project-metadata.json"
+    ],
+    "templates": [
+      "templates/educational_blog_post_template.md",
+      "templates/governance_framework_template.md",
+      "templates/community_resource_template.md",
+      "templates/mitigator_ai_style_guide.md",
+      "templates/content_update_worksheet.md",
+      "templates/sample_educational_post.md"
     ]
   },
   "technologies": [
