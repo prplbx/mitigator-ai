@@ -270,51 +270,121 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', handleLazyLoad);
     }
     
-    // Function to handle lazy loading of ads
+    // Enhanced ad management system
     function handleAdLazyLoading() {
-        const adContainers = document.querySelectorAll('.ad-container:not(.top-ad)');
+        // Configuration
+        const adConfig = {
+            rootMargin: '300px', // Load ads when they're 300px from viewport (more time to load)
+            bannerAdsEnabled: true,
+            inArticleAdsEnabled: true,
+            adsToLoad: ['banner-ad', 'bottom-ad', 'in-article-ad'],
+            timeoutDuration: 3000, // Timeout for ad loading (ms)
+            retryAttempts: 1,     // Number of retry attempts for failed ads
+            adLabelText: 'Sponsored Content'
+        };
+
+        // Find all ad containers by class
+        const adContainers = document.querySelectorAll('.ad-container');
         
-        // No ad containers found or all are top ads, exit early
+        // No ad containers found, exit early
         if (adContainers.length === 0) return;
         
-        // Add support message to all ad containers
-        adContainers.forEach(container => {
-            const supportMsg = document.createElement('p');
-            supportMsg.className = 'ad-support-message';
-            supportMsg.textContent = 'Ad revenue supports our nonprofit mission';
-            container.appendChild(supportMsg);
-        });
-        
+        // Setup IntersectionObserver for lazy loading
         const options = {
-            rootMargin: '200px', // Load ads when they're 200px from viewport
+            rootMargin: adConfig.rootMargin,
             threshold: 0
         };
         
-        const observer = new IntersectionObserver((entries) => {
+        const adObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const adContainer = entry.target;
-                    const adScript = adContainer.querySelector('script');
-                    const adIns = adContainer.querySelector('ins');
                     
-                    if (adIns && !adContainer.classList.contains('loaded')) {
-                        // Execute the adsbygoogle push command
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                        adContainer.classList.add('loaded');
-                        
-                        // Log for debugging
-                        console.log('Ad loaded via lazy loading:', adIns.dataset.adSlot);
+                    // Skip already loaded or loading ads
+                    if (adContainer.classList.contains('loaded') ||
+                        adContainer.classList.contains('loading')) {
+                        return;
                     }
                     
-                    // Unobserve after loading
-                    observer.unobserve(adContainer);
+                    loadAdInContainer(adContainer);
+                    
+                    // Unobserve after attempting to load
+                    adObserver.unobserve(adContainer);
                 }
             });
         }, options);
         
-        // Observe all ad containers except the top one
+        // Function to load an ad in a container with timeout
+        function loadAdInContainer(container) {
+            const adIns = container.querySelector('ins');
+            
+            if (!adIns) return;
+            
+            // Mark as loading
+            container.classList.add('loading');
+            
+            // Set a timeout to check if ad loaded properly
+            const timeoutId = setTimeout(() => {
+                // If ad hasn't loaded after timeout
+                if (!container.classList.contains('loaded')) {
+                    handleFailedAd(container);
+                }
+            }, adConfig.timeoutDuration);
+            
+            try {
+                // Execute the adsbygoogle push command
+                (adsbygoogle = window.adsbygoogle || []).push({
+                    // When ad loads successfully
+                    params: {
+                        google_ad_channel: "NonProfit"
+                    }
+                });
+                
+                // Listen for ad load or failure
+                adIns.addEventListener('load', () => {
+                    clearTimeout(timeoutId);
+                    markAdAsLoaded(container);
+                });
+                
+                // Set loaded class for tracking
+                container.classList.add('loaded');
+                
+                // Log successful ad request (debug only)
+                console.log('Ad requested:', adIns.className);
+                
+            } catch (error) {
+                console.error('Error loading ad:', error);
+                clearTimeout(timeoutId);
+                handleFailedAd(container);
+            }
+        }
+        
+        // Handle failed ad loading
+        function handleFailedAd(container) {
+            // Hide the container gracefully
+            container.classList.add('ad-empty');
+            
+            // Remove loading status
+            container.classList.remove('loading');
+            
+            // Log the failure (debug only)
+            console.log('Ad failed to load:', container.querySelector('ins')?.className);
+        }
+        
+        // Mark ad as successfully loaded
+        function markAdAsLoaded(container) {
+            container.classList.remove('loading');
+            container.classList.add('loaded');
+        }
+        
+        // Initialize and observe all ad containers
         adContainers.forEach(container => {
-            observer.observe(container);
+            // Only observe if the ad type is enabled
+            const adIns = container.querySelector('ins');
+            if (adIns) {
+                // Start observing
+                adObserver.observe(container);
+            }
         });
     }
     
@@ -348,19 +418,57 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
     
-    // Prevent ads from causing layout shifts
+    // Enhanced ad status monitoring and layout shift prevention
     window.addEventListener('load', function() {
-        // Add a small delay to ensure ads have been processed
+        // Primary check after initial page load (quick check)
         setTimeout(() => {
-            document.querySelectorAll('.ad-container ins').forEach(ins => {
-                // If the ad didn't load properly
-                if (!ins.getAttribute('data-ad-status') || ins.getAttribute('data-ad-status') === 'unfilled') {
-                    const container = ins.closest('.ad-container');
-                    if (container) {
-                        container.style.display = 'none';
+            checkAdStatus();
+        }, 1000);
+        
+        // Secondary deeper check after more time
+        setTimeout(() => {
+            checkAdStatus(true);
+        }, 3000);
+    });
+    
+    // Function to check ad status and handle accordingly
+    function checkAdStatus(finalCheck = false) {
+        document.querySelectorAll('.ad-container ins').forEach(ins => {
+            const container = ins.closest('.ad-container');
+            if (!container) return;
+            
+            // Check various conditions that indicate ad failure
+            const adFailed = !ins.getAttribute('data-ad-status') ||
+                            ins.getAttribute('data-ad-status') === 'unfilled' ||
+                            ins.innerHTML.trim() === '' ||
+                            ins.offsetHeight < 10; // Ad is too small to be visible
+            
+            if (adFailed) {
+                // Hide the container completely
+                container.classList.add('ad-empty');
+                
+                // If final check, remove from DOM completely to save resources
+                if (finalCheck) {
+                    container.style.display = 'none';
+                    // Optionally, record metrics for failed ads
+                    if (window.gtag) {
+                        gtag('event', 'ad_failure', {
+                            'event_category': 'Ads',
+                            'event_label': ins.className || 'unknown',
+                            'non_interaction': true
+                        });
                     }
                 }
-            });
-        }, 2000);
-    });
+            } else if (finalCheck && !container.classList.contains('ad-empty')) {
+                // Record successful ad impressions
+                if (window.gtag) {
+                    gtag('event', 'ad_impression', {
+                        'event_category': 'Ads',
+                        'event_label': ins.className || 'unknown',
+                        'non_interaction': true
+                    });
+                }
+            }
+        });
+    }
 });

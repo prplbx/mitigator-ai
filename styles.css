@@ -902,7 +902,7 @@ footer {
     width: 100%;
     max-width: 1200px;
     margin: 3rem auto;
-    padding: 1.5rem;
+    padding: 1rem 1.5rem 1.5rem;
     background-color: rgba(249, 250, 251, 0.8);
     border-radius: var(--radius-lg);
     border: 1px solid var(--gray-light);
@@ -912,20 +912,21 @@ footer {
     position: relative;
     min-height: 90px;
     transition: all 0.3s ease;
+    clear: both;
 }
 
-/* Nonprofit context label */
-.ad-container::before {
-    content: "Sponsored Content";
+/* Ad label styling */
+.ad-label {
     position: absolute;
     top: 0.5rem;
     left: 1rem;
     font-size: 0.75rem;
     color: var(--gray-color);
     font-weight: 500;
+    z-index: 2;
 }
 
-/* More subtle and integrated styling */
+/* Top colored border for ads */
 .ad-container::after {
     content: "";
     position: absolute;
@@ -937,26 +938,39 @@ footer {
     opacity: 0.7;
 }
 
+/* Different ad container types */
+.ad-banner {
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+    margin: 2rem auto;
+}
+
+.ad-in-article {
+    float: right;
+    width: 300px;
+    margin: 0 0 1rem 1.5rem;
+    padding: 1.5rem 1rem 1rem;
+    max-width: 40%;
+}
+
 .ad-container ins {
     display: block;
     width: 100%;
-    height: auto;
-    min-height: 250px;
+    margin: 0 auto;
 }
 
-/* Handle empty or problematic ad containers more gracefully */
-.ad-container:empty,
-.ad-container ins:empty {
-    min-height: 0;
-    height: 0;
-    padding: 0;
-    margin: 0;
-    border: none;
-    display: none;
+.banner-ad {
+    min-height: 90px;
+    max-height: 100px;
+}
+
+.in-article-ad {
+    min-height: 250px;
+    max-height: 280px;
 }
 
 /* Support message for ads */
-.ad-container .ad-support-message {
+.ad-support-message {
     font-size: 0.7rem;
     color: var(--gray-color);
     position: absolute;
@@ -966,19 +980,52 @@ footer {
     opacity: 0.8;
 }
 
+/* Empty or failed ads handling */
+.ad-container.ad-empty {
+    display: none;
+    height: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    overflow: hidden;
+}
+
 /* Better responsive handling */
+@media (max-width: 992px) {
+    .ad-in-article {
+        float: none;
+        width: 100%;
+        max-width: 100%;
+        margin: 2rem auto;
+    }
+}
+
 @media (max-width: 768px) {
     .ad-container {
         margin: 2rem auto;
-        padding: 1rem;
+        padding: 2rem 1rem 1rem;
     }
     
-    .ad-container::before {
-        font-size: 0.7rem;
+    .ad-support-message {
+        position: relative;
+        display: block;
+        text-align: center;
+        bottom: auto;
+        right: auto;
+        margin-top: 0.5rem;
     }
     
-    .ad-container .ad-support-message {
-        display: none;
+    .ad-banner {
+        padding-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .ad-label {
+        width: 100%;
+        left: 0;
+        text-align: center;
     }
 }
 

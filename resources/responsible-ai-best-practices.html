@@ -27,8 +27,14 @@
       gtag('config', 'G-W1C5331WG8');
     </script>
     
-    <!-- Google AdSense -->
+    <!-- Google AdSense with improved loading -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6867466150255348" crossorigin="anonymous"></script>
+    
+    <!-- Preconnect to ad domains for faster loading -->
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://googleads.g.doubleclick.net">
+    <link rel="preconnect" href="https://www.google.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
     <style>
         .blog-content {
             max-width: 800px;
@@ -197,18 +203,17 @@
         </div>
     </section>
 
-    <!-- Google Ad Container -->
-    <div class="ad-container">
-        <!-- au1 -->
-        <ins class="adsbygoogle"
-             style="display:block"
+    <!-- Google Ad Container - Top Banner -->
+    <div class="ad-container ad-banner">
+        <div class="ad-label">Sponsored Content</div>
+        <ins class="adsbygoogle banner-ad"
+             style="display:block; min-height:90px; max-height:100px"
              data-ad-client="ca-pub-6867466150255348"
              data-ad-slot="2305321449"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+             data-ad-format="horizontal"
+             data-full-width-responsive="true"
+             data-ad-region="article-top-banner"></ins>
+        <div class="ad-support-message">Ad revenue supports our nonprofit mission</div>
     </div>
 
     <section class="blog-content">
@@ -223,6 +228,18 @@
             </div>
 
             <p>As artificial intelligence continues to transform enterprises across all sectors, organizations face increasing pressure to implement AI systems that are not only effective but also responsible and ethical. The stakes are high: AI implementations that fail to consider governance, ethics, and risk management may lead to reputational damage, regulatory penalties, and erosion of stakeholder trust.</p>
+            
+            <!-- In-article ad -->
+            <div class="ad-container ad-in-article">
+                <div class="ad-label">Sponsored</div>
+                <ins class="adsbygoogle in-article-ad"
+                     style="display:block"
+                     data-ad-client="ca-pub-6867466150255348"
+                     data-ad-slot="3456789012"
+                     data-ad-format="rectangle"
+                     data-ad-region="article-in-content"></ins>
+                <div class="ad-support-message">Ad supports our mission</div>
+            </div>
 
             <p>At mitigator.ai, we've guided numerous organizations through the complex journey of responsible AI adoption. Based on our experience, we've identified five best practices that can help enterprises navigate the challenges of implementing AI systems that are both powerful and ethically sound.</p>
 
@@ -318,18 +335,17 @@
         </div>
     </section>
 
-    <!-- Google Ad Container -->
-    <div class="ad-container">
-        <!-- au1 -->
-        <ins class="adsbygoogle"
-             style="display:block"
+    <!-- Google Ad Container - Bottom Banner -->
+    <div class="ad-container ad-banner">
+        <div class="ad-label">Sponsored Content</div>
+        <ins class="adsbygoogle bottom-ad"
+             style="display:block; min-height:90px; max-height:100px"
              data-ad-client="ca-pub-6867466150255348"
-             data-ad-slot="2305321449"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+             data-ad-slot="1234567890"
+             data-ad-format="horizontal"
+             data-full-width-responsive="true"
+             data-ad-region="article-bottom-banner"></ins>
+        <div class="ad-support-message">Ad revenue supports our nonprofit mission</div>
     </div>
 
     <footer>
