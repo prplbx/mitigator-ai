@@ -4,7 +4,20 @@
   "description": "A professional landing page for mitigator.ai, a nonprofit organization focused on AI governance and education.",
   "main": "analytics.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "minify:css": "cleancss -o styles.min.css styles.css",
+    "minify:js": "uglifyjs script.js -c -m -o script.min.js",
+    "minify": "npm run minify:css && npm run minify:js",
+    "watch:css": "watch \"npm run minify:css\" styles.css",
+    "watch:js": "watch \"npm run minify:js\" script.js",
+    "serve": "browser-sync start --server --files \"*.html, *.css, *.js\"",
+    "dev": "concurrently \"npm run watch:css\" \"npm run watch:js\" \"npm run serve\"",
+    "start": "npm run dev",
+    "build": "npm run minify",
+    "lint": "eslint . && stylelint \"**/*.css\"",
+    "lint:fix": "eslint . --fix && stylelint \"**/*.css\" --fix",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint \"**/*.css\""
   },
   "repository": {
     "type": "git",
@@ -19,5 +32,15 @@
   "homepage": "https://github.com/prplbx/mitigator-ai#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "clean-css-cli": "^5.6.2",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^34.0.0",
+    "uglify-js": "^3.17.4",
+    "watch": "^1.0.2"
   }
 }
