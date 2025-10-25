@@ -1092,27 +1092,27 @@
 
         // Override the original filter function with enhanced version
         window.filterTools = enhancedFilterTools;
-        
+
         // Sticky TOC functionality
         function toggleTOC() {
             const toc = document.querySelector('.sticky-toc');
             toc.classList.toggle('collapsed');
         }
-        
+
         // Active section highlighting
         function updateActiveTOCLink() {
             const sections = document.querySelectorAll('h2[id], h3[id]');
             const tocLinks = document.querySelectorAll('.toc-link');
-            
+
             let currentSection = '';
-            
+
             sections.forEach(section => {
                 const rect = section.getBoundingClientRect();
                 if (rect.top <= 100 && rect.bottom >= 100) {
                     currentSection = section.id;
                 }
             });
-            
+
             tocLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('data-section') === currentSection) {
@@ -1120,18 +1120,18 @@
                 }
             });
         }
-        
+
         // Smooth scroll for TOC links
         document.querySelectorAll('.toc-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
-                
+
                 if (targetElement) {
                     const headerHeight = 80;
                     const targetPosition = targetElement.offsetTop - headerHeight;
-                    
+
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
@@ -1139,11 +1139,11 @@
                 }
             });
         });
-        
+
         // Update active TOC link on scroll
         window.addEventListener('scroll', updateActiveTOCLink);
         window.addEventListener('load', updateActiveTOCLink);
-        
+
         // Auto-collapse TOC on mobile after selection
         if (window.innerWidth <= 768) {
             document.querySelectorAll('.toc-link').forEach(link => {

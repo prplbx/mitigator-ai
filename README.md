@@ -27,6 +27,7 @@ Mitigator.ai is a nonprofit organization dedicated to democratizing AI for organ
 ## Project Structure
 
 - **HTML Pages**:
+
   - index.html - Main landing page with services, use cases, about section
   - ai-tools.html - Top 10 generative AI tools in 2025
   - ai-governance.html - Responsible AI governance frameworks
@@ -77,6 +78,8 @@ The site includes several performance optimizations:
 ## Live Demo
 
 This site is hosted on GitHub Pages at: https://prplbx.github.io/mitigator-ai/
+
+It is also served on our main URL: https://www.mitigator.ai/
 
 ## Local Development
 

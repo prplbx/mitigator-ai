@@ -101,6 +101,15 @@
 - **Loading States**: Shimmer effects for dynamic content
 - **Animated Counters**: Metrics count up when scrolled into view
 
+### Navigation Elements:
+
+- **Sticky Table of Contents**: Fixed position TOC that stays visible while scrolling
+- **Collapsible Navigation**: Toggle button to expand/collapse TOC
+- **Active Section Highlighting**: Current section highlighted as you scroll
+- **Smooth Scroll Navigation**: Clicking links smoothly scrolls to sections
+- **Visual Icons**: Emoji or icon indicators for each section
+- **Responsive TOC**: Adapts to mobile devices with bottom positioning
+
 ## Conclusion {#conclusion}
 
 [Summary and call to action - could direct to resources, volunteer opportunities, or donation (150-200 words)]

@@ -45,6 +45,19 @@ This template provides a comprehensive guide for implementing interactive elemen
 - [ ] **Pulse Effects** - Attention-grabbing pulse animations
 - [ ] **Bounce Effects** - Playful bounce animations for engagement
 
+### ✅ Navigation Features
+
+- [ ] **Sticky Table of Contents** - Fixed position TOC that stays visible while scrolling
+- [ ] **Collapsible TOC** - Toggle button to expand/collapse navigation
+- [ ] **Active Section Highlighting** - Current section highlighted as you scroll
+- [ ] **Smooth Scroll Navigation** - Clicking links smoothly scrolls to sections
+- [ ] **Visual Icons** - Emoji or icon indicators for each section
+- [ ] **Responsive TOC** - Adapts to mobile devices with bottom positioning
+- [ ] **Auto-collapse on Mobile** - Automatically collapses after selection
+- [ ] **Progress Indicators** - Visual progress bars for active sections
+- [ ] **Glass Morphism** - Modern backdrop blur effect for TOC
+- [ ] **Keyboard Navigation** - Arrow key navigation support
+
 ## HTML Structure Template
 
 ### Basic Interactive Blog Post Structure

@@ -302,7 +302,31 @@ Use for advanced animations and micro-interactions.
 </div>
 ```
 
-### 12. Animation Classes Reference
+### 12. Sticky Table of Contents
+
+Use for enhanced navigation with sticky positioning.
+
+```html
+<!-- Sticky Table of Contents -->
+<div class="sticky-toc">
+    <div class="toc-header">
+        <h3>📋 Table of Contents</h3>
+        <button class="toc-toggle" onclick="toggleTOC()">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+    </div>
+    <nav class="toc-nav" id="tocNav">
+        <ul>
+            <li><a href="#section-1" class="toc-link" data-section="section-1">
+                <span class="toc-icon">🎯</span>
+                <span class="toc-text">Section Title</span>
+            </a></li>
+        </ul>
+    </nav>
+</div>
+```
+
+### 13. Animation Classes Reference
 
 Use these CSS classes for professional styling:
 
@@ -324,6 +348,12 @@ Use these CSS classes for professional styling:
 /* Typography Effects */
 .blog-content h2:hover - Heading hover animations
 .comparison-row:hover - Row hover effects
+
+/* Sticky TOC Classes */
+.sticky-toc - Fixed position TOC container
+.sticky-toc.collapsed - Collapsed state
+.toc-link.active - Active section highlighting
+.toc-toggle - Toggle button for collapse/expand
 ```
 
 ## Interactive JavaScript Functions
