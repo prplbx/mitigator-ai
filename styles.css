@@ -1378,38 +1378,38 @@ footer {
     .hero-section h1 {
         font-size: 2rem;
     }
-    
+
     .reading-info {
         flex-direction: column;
         gap: 1rem;
     }
-    
+
     .toc-nav ul {
         grid-template-columns: 1fr;
     }
-    
+
     .tool-comparison {
         grid-template-columns: 1fr;
     }
-    
+
     .blog-post {
         padding: 1rem;
     }
-    
+
     .key-takeaways {
         margin: 1rem;
         padding: 1rem;
     }
-    
+
     .comparison-grid {
         grid-template-columns: 1fr;
         gap: 0.5rem;
     }
-    
+
     .comparison-header {
         display: none;
     }
-    
+
     .comparison-row {
         display: block;
         margin-bottom: 1rem;
@@ -1418,7 +1418,7 @@ footer {
         padding: 1rem;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-    
+
     .comparison-row > div {
         display: block;
         background: transparent;
@@ -1426,13 +1426,13 @@ footer {
         padding: 0.25rem 0;
         text-align: left;
     }
-    
+
     .comparison-row > div:before {
         content: attr(data-label) ": ";
         font-weight: 600;
         color: var(--primary-color);
     }
-    
+
     .flowchart-branches {
         grid-template-columns: 1fr;
     }
