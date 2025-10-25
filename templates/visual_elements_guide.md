@@ -210,7 +210,7 @@ Use for real-world examples with structured format.
     <div class="case-study-content">
       <h4>Challenge</h4>
       <p>[Problem description]</p>
-      
+
       <h4>Solution</h4>
       <p>[Solution description]</p>
       <ul>
@@ -218,7 +218,7 @@ Use for real-world examples with structured format.
         <li>[Key point 2]</li>
         <li>[Key point 3]</li>
       </ul>
-      
+
       <h4>Results</h4>
       <div class="results-grid">
         <div class="result-item">

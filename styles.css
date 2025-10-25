@@ -1882,45 +1882,408 @@ html {
     font-size: 1.2rem;
 }
 
+/* Professional Styling - Advanced Animations */
+
+/* Smooth Page Load Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Page Load Animations */
+.hero-section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.key-takeaways {
+    animation: fadeInScale 0.6s ease-out 0.2s both;
+}
+
+.table-of-contents {
+    animation: slideInLeft 0.6s ease-out 0.4s both;
+}
+
+.tool-comparison-chart {
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.case-studies {
+    animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+.benchmarks-section {
+    animation: fadeInUp 0.8s ease-out 1s both;
+}
+
+.testimonials-section {
+    animation: fadeInUp 0.8s ease-out 1.2s both;
+}
+
+/* Enhanced Hover Effects */
+.tool-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.tool-card:hover::before {
+    left: 100%;
+}
+
+.tool-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Animated Progress Bars */
+.benchmark-fill {
+    animation: slideInLeft 1s ease-out;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Micro-interactions */
+.filter-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+.filter-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.filter-btn:active {
+    transform: scale(0.95);
+}
+
+/* Expandable Content Animations */
+.expandable-content {
+    animation: slideInLeft 0.3s ease-out;
+}
+
+.expand-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.expand-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+.expand-btn:hover::after {
+    width: 200px;
+    height: 200px;
+}
+
+/* Testimonial Card Animations */
+.testimonial-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.testimonial-card:hover::before {
+    transform: translateX(100%);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px) rotate(1deg);
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Case Study Animations */
+.case-study {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.case-study:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+}
+
+.result-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.result-item:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1);
+}
+
+.result-metric {
+    animation: pulse 2s infinite;
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+/* Scroll-triggered Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhanced Typography */
+.blog-content h2 {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.blog-content h2:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.blog-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.blog-content h2:hover::after {
+    width: 100%;
+}
+
+/* Interactive Elements */
+.comparison-row {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.comparison-row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.comparison-row:hover::before {
+    transform: translateX(100%);
+}
+
+/* Floating Elements */
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse Effects */
+.pulse-effect {
+    animation: pulse 2s infinite;
+}
+
+/* Bounce Effects */
+.bounce-effect {
+    animation: bounce 1s infinite;
+}
+
 /* Responsive Design for Content Structure */
 @media (max-width: 768px) {
     .case-study-meta {
         flex-direction: column;
         gap: 0.5rem;
     }
-
+    
     .results-grid {
         grid-template-columns: 1fr;
     }
-
+    
     .benchmark-item {
         grid-template-columns: 1fr;
         gap: 0.5rem;
         text-align: center;
     }
-
+    
     .benchmark-details {
         text-align: center;
     }
-
+    
     .cost-item {
         grid-template-columns: 1fr;
         gap: 0.5rem;
         text-align: center;
     }
-
+    
     .roi-grid {
         grid-template-columns: 1fr;
     }
-
+    
     .testimonials-grid {
         grid-template-columns: 1fr;
     }
-
+    
     .testimonial-author {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
+    }
+    
+    /* Reduce animations on mobile for performance */
+    .tool-card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+    
+    .testimonial-card:hover {
+        transform: translateY(-2px);
+    }
+    
+    .case-study:hover {
+        transform: translateY(-3px) scale(1.005);
     }
 }
 

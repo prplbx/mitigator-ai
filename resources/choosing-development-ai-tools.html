@@ -403,7 +403,7 @@
                 <h2 id="case-studies">Real-World Case Studies</h2>
 
                 <div class="case-studies">
-                    <div class="case-study">
+                    <div class="case-study animate-on-scroll">
                         <div class="case-study-header">
                             <h3>🚀 Startup MVP Development</h3>
                             <div class="case-study-meta">
@@ -442,7 +442,7 @@
                         </div>
                     </div>
 
-                    <div class="case-study">
+                    <div class="case-study animate-on-scroll">
                         <div class="case-study-header">
                             <h3>🏢 Enterprise Code Migration</h3>
                             <div class="case-study-meta">
@@ -482,7 +482,7 @@
                         </div>
                     </div>
 
-                    <div class="case-study">
+                    <div class="case-study animate-on-scroll">
                         <div class="case-study-header">
                             <h3>🎓 Educational Platform Development</h3>
                             <div class="case-study-meta">
@@ -545,7 +545,7 @@
                 <div class="benchmarks-section">
                     <h3>Development Speed Comparison</h3>
                     <div class="benchmark-chart">
-                        <div class="benchmark-item">
+                        <div class="benchmark-item animate-on-scroll">
                             <div class="benchmark-tool">Cursor + Claude</div>
                             <div class="benchmark-bar">
                                 <div class="benchmark-fill" style="width: 95%"></div>
@@ -554,7 +554,7 @@
                             <div class="benchmark-details">Professional development with AI assistance</div>
                         </div>
 
-                        <div class="benchmark-item">
+                        <div class="benchmark-item animate-on-scroll">
                             <div class="benchmark-tool">Loveable</div>
                             <div class="benchmark-bar">
                                 <div class="benchmark-fill" style="width: 85%"></div>
@@ -563,7 +563,7 @@
                             <div class="benchmark-details">Rapid prototyping and MVP development</div>
                         </div>
 
-                        <div class="benchmark-item">
+                        <div class="benchmark-item animate-on-scroll">
                             <div class="benchmark-tool">Replit</div>
                             <div class="benchmark-bar">
                                 <div class="benchmark-fill" style="width: 75%"></div>
@@ -572,7 +572,7 @@
                             <div class="benchmark-details">Collaborative development and learning</div>
                         </div>
 
-                        <div class="benchmark-item">
+                        <div class="benchmark-item animate-on-scroll">
                             <div class="benchmark-tool">ChatGPT</div>
                             <div class="benchmark-bar">
                                 <div class="benchmark-fill" style="width: 70%"></div>
@@ -953,6 +953,112 @@
         // Add reading progress bar
         window.addEventListener('scroll', updateReadingProgress);
         window.addEventListener('load', updateReadingProgress);
+        
+        // Scroll-triggered animations
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.case-study, .benchmark-item, .testimonial-card, .result-item');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('animate-on-scroll', 'animated');
+                }
+            });
+        }
+        
+        // Throttled scroll event for performance
+        let ticking = false;
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(animateOnScroll);
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', requestTick);
+        window.addEventListener('load', animateOnScroll);
+        
+        // Enhanced hover effects for interactive elements
+        document.querySelectorAll('.tool-card, .testimonial-card, .case-study').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+                this.style.boxShadow = '0 20px 40px -12px rgba(0, 0, 0, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+            });
+        });
+        
+        // Animated counter for metrics
+        function animateCounters() {
+            const counters = document.querySelectorAll('.result-metric, .roi-metric');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/[^0-9]/g, ''));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = counter.textContent.replace(/[0-9]+/, target);
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = counter.textContent.replace(/[0-9]+/, Math.floor(current));
+                    }
+                }, 16);
+            });
+        }
+        
+        // Trigger counter animation when in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        document.querySelectorAll('.results-grid, .roi-grid').forEach(grid => {
+            observer.observe(grid);
+        });
+        
+        // Add loading states for dynamic content
+        function addLoadingState(element) {
+            element.classList.add('loading');
+            setTimeout(() => {
+                element.classList.remove('loading');
+            }, 1000);
+        }
+        
+        // Enhanced filter animations
+        function enhancedFilterTools() {
+            const searchTerm = document.getElementById('toolSearch').value.toLowerCase();
+            const rows = document.querySelectorAll('.comparison-row');
+            
+            rows.forEach((row, index) => {
+                const toolName = row.querySelector('.tool-name').textContent.toLowerCase();
+                const category = row.querySelector('.category').textContent.toLowerCase();
+                const bestFor = row.querySelector('.best-for').textContent.toLowerCase();
+                
+                if (toolName.includes(searchTerm) || category.includes(searchTerm) || bestFor.includes(searchTerm)) {
+                    row.style.display = 'contents';
+                    row.style.animation = `fadeInUp 0.3s ease-out ${index * 0.1}s both`;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+        
+        // Override the original filter function with enhanced version
+        window.filterTools = enhancedFilterTools;
     </script>
 </body>
 </html>
