@@ -3045,28 +3045,28 @@ html {
         max-height: 50vh;
         transform: none;
     }
-    
+
     .sticky-toc.collapsed {
         width: auto;
         height: 60px;
     }
-    
+
     .sticky-toc.collapsed .toc-nav {
         display: none;
     }
-    
+
     .toc-header {
         padding: 1rem;
     }
-    
+
     .toc-nav {
         max-height: calc(50vh - 80px);
     }
-    
+
     .toc-link {
         padding: 0.5rem 1rem;
     }
-    
+
     .toc-text {
         font-size: 0.85rem;
     }
@@ -3078,15 +3078,15 @@ html {
         left: 10px;
         right: 10px;
     }
-    
+
     .toc-header h3 {
         font-size: 1rem;
     }
-    
+
     .toc-link {
         padding: 0.6rem 1rem;
     }
-    
+
     .toc-icon {
         font-size: 1rem;
         width: 20px;
