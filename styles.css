@@ -2860,3 +2860,235 @@ html {
     .btn-primary, .btn-secondary {
         width: 100%;
     }
+
+
+/* Sticky Table of Contents */
+.sticky-toc {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 280px;
+    max-height: 70vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 100;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.sticky-toc.collapsed {
+    width: 60px;
+}
+
+.sticky-toc.collapsed .toc-nav {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.toc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.toc-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toc-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.toc-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.sticky-toc.collapsed .toc-toggle i {
+    transform: rotate(180deg);
+}
+
+.toc-nav {
+    padding: 1rem 0;
+    max-height: calc(70vh - 80px);
+    overflow-y: auto;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toc-nav::-webkit-scrollbar {
+    width: 4px;
+}
+
+.toc-nav::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
+}
+
+.toc-nav::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.toc-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-nav li {
+    margin: 0;
+}
+
+.toc-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border-left: 3px solid transparent;
+}
+
+.toc-link:hover {
+    background: rgba(115, 99, 243, 0.1);
+    color: var(--primary-color);
+    transform: translateX(5px);
+    border-left-color: var(--primary-color);
+}
+
+.toc-link.active {
+    background: linear-gradient(90deg, rgba(115, 99, 243, 0.1), rgba(115, 99, 243, 0.05));
+    color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    font-weight: 600;
+}
+
+.toc-icon {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.toc-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.sticky-toc.collapsed .toc-text {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+/* Progress indicator for TOC */
+.toc-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--primary-color);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom;
+}
+
+.toc-link.active::before {
+    transform: scaleY(1);
+}
+
+/* Responsive Design for Sticky TOC */
+@media (max-width: 1200px) {
+    .sticky-toc {
+        left: 10px;
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sticky-toc {
+        position: fixed;
+        top: auto;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        width: auto;
+        max-height: 50vh;
+        transform: none;
+    }
+    
+    .sticky-toc.collapsed {
+        width: auto;
+        height: 60px;
+    }
+    
+    .sticky-toc.collapsed .toc-nav {
+        display: none;
+    }
+    
+    .toc-header {
+        padding: 1rem;
+    }
+    
+    .toc-nav {
+        max-height: calc(50vh - 80px);
+    }
+    
+    .toc-link {
+        padding: 0.5rem 1rem;
+    }
+    
+    .toc-text {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sticky-toc {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+    }
+    
+    .toc-header h3 {
+        font-size: 1rem;
+    }
+    
+    .toc-link {
+        padding: 0.6rem 1rem;
+    }
+    
+    .toc-icon {
+        font-size: 1rem;
+        width: 20px;
+    }
+}
