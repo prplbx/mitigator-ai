@@ -2238,50 +2238,50 @@ html {
         flex-direction: column;
         gap: 0.5rem;
     }
-    
+
     .results-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .benchmark-item {
         grid-template-columns: 1fr;
         gap: 0.5rem;
         text-align: center;
     }
-    
+
     .benchmark-details {
         text-align: center;
     }
-    
+
     .cost-item {
         grid-template-columns: 1fr;
         gap: 0.5rem;
         text-align: center;
     }
-    
+
     .roi-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .testimonials-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .testimonial-author {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
     }
-    
+
     /* Reduce animations on mobile for performance */
     .tool-card:hover {
         transform: translateY(-4px) scale(1.01);
     }
-    
+
     .testimonial-card:hover {
         transform: translateY(-2px);
     }
-    
+
     .case-study:hover {
         transform: translateY(-3px) scale(1.005);
     }
