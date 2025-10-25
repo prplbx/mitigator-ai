@@ -5,6 +5,7 @@ This template provides comprehensive guidance for implementing professional styl
 ## Professional Styling Checklist
 
 ### ✅ Required Animation Elements
+
 - [ ] **Page Load Animations** - Staggered entrance effects for all sections
 - [ ] **Scroll-triggered Animations** - Elements animate as they come into view
 - [ ] **Hover Effects** - Enhanced interactions for all interactive elements
@@ -12,6 +13,7 @@ This template provides comprehensive guidance for implementing professional styl
 - [ ] **Progress Animations** - Animated counters and progress bars
 
 ### ✅ Optional Animation Elements
+
 - [ ] **Micro-interactions** - Button ripple effects and scale feedback
 - [ ] **Floating Elements** - Subtle floating animations for visual interest
 - [ ] **Pulse Effects** - Attention-grabbing pulse animations
@@ -145,129 +147,139 @@ Enhance interactive elements with professional animations:
 ```css
 /* Page Load Animations */
 .hero-section {
-    animation: fadeInUp 0.8s ease-out;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .key-takeaways {
-    animation: fadeInScale 0.6s ease-out 0.2s both;
+  animation: fadeInScale 0.6s ease-out 0.2s both;
 }
 
 .table-of-contents {
-    animation: slideInLeft 0.6s ease-out 0.4s both;
+  animation: slideInLeft 0.6s ease-out 0.4s both;
 }
 
 .tool-comparison-chart {
-    animation: fadeInUp 0.8s ease-out 0.6s both;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
 }
 
 .case-studies {
-    animation: fadeInUp 0.8s ease-out 0.8s both;
+  animation: fadeInUp 0.8s ease-out 0.8s both;
 }
 
 .benchmarks-section {
-    animation: fadeInUp 0.8s ease-out 1s both;
+  animation: fadeInUp 0.8s ease-out 1s both;
 }
 
 .testimonials-section {
-    animation: fadeInUp 0.8s ease-out 1.2s both;
+  animation: fadeInUp 0.8s ease-out 1.2s both;
 }
 
 /* Scroll-triggered Animations */
 .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .animate-on-scroll.animated {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Enhanced Hover Effects */
 .tool-card {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
 .tool-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
 }
 
 .tool-card:hover::before {
-    left: 100%;
+  left: 100%;
 }
 
 .tool-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
 }
 
 /* Micro-interactions */
 .filter-btn {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    transform: translate(-50%, -50%);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%);
 }
 
 .filter-btn:hover::before {
-    width: 300px;
-    height: 300px;
+  width: 300px;
+  height: 300px;
 }
 
 .filter-btn:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 /* Loading States */
 .loading {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .loading::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    animation: shimmer 1.5s infinite;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
 }
 
 /* Special Effects */
 .floating {
-    animation: float 3s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
 }
 
 .pulse-effect {
-    animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
 }
 
 .bounce-effect {
-    animation: bounce 1s infinite;
+  animation: bounce 1s infinite;
 }
 ```
 
@@ -275,75 +287,81 @@ Enhance interactive elements with professional animations:
 
 ```css
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }
 
 @keyframes shimmer {
-    0% {
-        background-position: -200px 0;
-    }
-    100% {
-        background-position: calc(200px + 100%) 0;
-    }
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
 }
 
 @keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 ```
 
@@ -354,47 +372,51 @@ Enhance interactive elements with professional animations:
 ```javascript
 // Scroll-triggered animations
 function animateOnScroll() {
-    const elements = document.querySelectorAll('.case-study, .benchmark-item, .testimonial-card, .result-item');
-    const windowHeight = window.innerHeight;
-    
-    elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < windowHeight - elementVisible) {
-            element.classList.add('animate-on-scroll', 'animated');
-        }
-    });
+  const elements = document.querySelectorAll(
+    ".case-study, .benchmark-item, .testimonial-card, .result-item"
+  );
+  const windowHeight = window.innerHeight;
+
+  elements.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
+    const elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+      element.classList.add("animate-on-scroll", "animated");
+    }
+  });
 }
 
 // Throttled scroll event for performance
 let ticking = false;
 function requestTick() {
-    if (!ticking) {
-        requestAnimationFrame(animateOnScroll);
-        ticking = true;
-    }
+  if (!ticking) {
+    requestAnimationFrame(animateOnScroll);
+    ticking = true;
+  }
 }
 
-window.addEventListener('scroll', requestTick);
-window.addEventListener('load', animateOnScroll);
+window.addEventListener("scroll", requestTick);
+window.addEventListener("load", animateOnScroll);
 ```
 
 ### Enhanced Hover Effects
 
 ```javascript
 // Enhanced hover effects for interactive elements
-document.querySelectorAll('.tool-card, .testimonial-card, .case-study').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-8px) scale(1.02)';
-        this.style.boxShadow = '0 20px 40px -12px rgba(0, 0, 0, 0.15)';
+document
+  .querySelectorAll(".tool-card, .testimonial-card, .case-study")
+  .forEach((card) => {
+    card.addEventListener("mouseenter", function () {
+      this.style.transform = "translateY(-8px) scale(1.02)";
+      this.style.boxShadow = "0 20px 40px -12px rgba(0, 0, 0, 0.15)";
     });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-        this.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+
+    card.addEventListener("mouseleave", function () {
+      this.style.transform = "translateY(0) scale(1)";
+      this.style.boxShadow = "0 4px 6px -1px rgba(0, 0, 0, 0.1)";
     });
-});
+  });
 ```
 
 ### Animated Counters
@@ -402,38 +424,41 @@ document.querySelectorAll('.tool-card, .testimonial-card, .case-study').forEach(
 ```javascript
 // Animated counter for metrics
 function animateCounters() {
-    const counters = document.querySelectorAll('.result-metric, .roi-metric');
-    
-    counters.forEach(counter => {
-        const target = parseInt(counter.textContent.replace(/[^0-9]/g, ''));
-        const duration = 2000;
-        const increment = target / (duration / 16);
-        let current = 0;
-        
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                counter.textContent = counter.textContent.replace(/[0-9]+/, target);
-                clearInterval(timer);
-            } else {
-                counter.textContent = counter.textContent.replace(/[0-9]+/, Math.floor(current));
-            }
-        }, 16);
-    });
+  const counters = document.querySelectorAll(".result-metric, .roi-metric");
+
+  counters.forEach((counter) => {
+    const target = parseInt(counter.textContent.replace(/[^0-9]/g, ""));
+    const duration = 2000;
+    const increment = target / (duration / 16);
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        counter.textContent = counter.textContent.replace(/[0-9]+/, target);
+        clearInterval(timer);
+      } else {
+        counter.textContent = counter.textContent.replace(
+          /[0-9]+/,
+          Math.floor(current)
+        );
+      }
+    }, 16);
+  });
 }
 
 // Trigger counter animation when in view
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounters();
-            observer.unobserve(entry.target);
-        }
-    });
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      animateCounters();
+      observer.unobserve(entry.target);
+    }
+  });
 });
 
-document.querySelectorAll('.results-grid, .roi-grid').forEach(grid => {
-    observer.observe(grid);
+document.querySelectorAll(".results-grid, .roi-grid").forEach((grid) => {
+  observer.observe(grid);
 });
 ```
 
@@ -442,10 +467,10 @@ document.querySelectorAll('.results-grid, .roi-grid').forEach(grid => {
 ```javascript
 // Add loading states for dynamic content
 function addLoadingState(element) {
-    element.classList.add('loading');
-    setTimeout(() => {
-        element.classList.remove('loading');
-    }, 1000);
+  element.classList.add("loading");
+  setTimeout(() => {
+    element.classList.remove("loading");
+  }, 1000);
 }
 ```
 
@@ -456,26 +481,26 @@ function addLoadingState(element) {
 ```css
 /* Reduce animations on mobile for performance */
 @media (max-width: 768px) {
-    .tool-card:hover {
-        transform: translateY(-4px) scale(1.01);
-    }
-    
-    .testimonial-card:hover {
-        transform: translateY(-2px);
-    }
-    
-    .case-study:hover {
-        transform: translateY(-3px) scale(1.005);
-    }
-    
-    /* Disable complex animations on mobile */
-    .floating {
-        animation: none;
-    }
-    
-    .pulse-effect {
-        animation: none;
-    }
+  .tool-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .case-study:hover {
+    transform: translateY(-3px) scale(1.005);
+  }
+
+  /* Disable complex animations on mobile */
+  .floating {
+    animation: none;
+  }
+
+  .pulse-effect {
+    animation: none;
+  }
 }
 ```
 
