@@ -38,7 +38,7 @@
     <div class="reading-progress-container">
         <div class="reading-progress"></div>
     </div>
-    
+
     <header>
         <nav>
             <div class="nav-container">
@@ -128,7 +128,7 @@
                 <!-- Visual Tool Comparison Chart -->
                 <div class="tool-comparison-chart">
                     <h3>Quick Tool Comparison</h3>
-                    
+
                     <!-- Filter and Search Controls -->
                     <div class="filter-controls">
                         <div class="search-box">
@@ -148,7 +148,7 @@
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="comparison-grid" id="comparisonGrid">
                         <div class="comparison-header">
                             <div class="tool-name">Tool</div>
@@ -203,12 +203,12 @@
                         <p><strong>Strengths:</strong> Natural language to code conversion, real-time collaboration, built-in deployment</p>
                         <p><strong>Limitations:</strong> Limited customization for complex enterprise needs</p>
                         <p><strong>Use Case:</strong> Startups and small teams building web applications quickly</p>
-                        
+
                         <button class="expand-btn" onclick="toggleDetails(this)">
                             <span class="expand-text">Show Details</span>
                             <span class="expand-icon">▼</span>
                         </button>
-                        
+
                         <div class="expandable-content">
                             <div class="detailed-info">
                                 <h5>Pricing & Plans</h5>
@@ -217,7 +217,7 @@
                                     <li><strong>Pro:</strong> $50/month - Advanced collaboration</li>
                                     <li><strong>Enterprise:</strong> Custom pricing</li>
                                 </ul>
-                                
+
                                 <h5>Key Features</h5>
                                 <ul>
                                     <li>Natural language to code conversion</li>
@@ -225,7 +225,7 @@
                                     <li>Built-in deployment to cloud platforms</li>
                                     <li>AI-powered code suggestions</li>
                                 </ul>
-                                
+
                                 <h5>Getting Started</h5>
                                 <p>Sign up for a free trial, describe your project in natural language, and watch Loveable generate the initial codebase. Perfect for MVPs and rapid prototyping.</p>
                             </div>
@@ -498,7 +498,7 @@
         // Initialize Google AdSense
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-    
+
     <!-- Interactive Elements JavaScript -->
     <script>
         // Expandable sections functionality
@@ -506,7 +506,7 @@
             const content = button.nextElementSibling;
             const expandText = button.querySelector('.expand-text');
             const expandIcon = button.querySelector('.expand-icon');
-            
+
             if (content.style.display === 'block') {
                 content.style.display = 'none';
                 expandText.textContent = 'Show Details';
@@ -519,17 +519,17 @@
                 button.classList.add('expanded');
             }
         }
-        
+
         // Tool filtering functionality
         function filterTools() {
             const searchTerm = document.getElementById('toolSearch').value.toLowerCase();
             const rows = document.querySelectorAll('.comparison-row');
-            
+
             rows.forEach(row => {
                 const toolName = row.querySelector('.tool-name').textContent.toLowerCase();
                 const category = row.querySelector('.category').textContent.toLowerCase();
                 const bestFor = row.querySelector('.best-for').textContent.toLowerCase();
-                
+
                 if (toolName.includes(searchTerm) || category.includes(searchTerm) || bestFor.includes(searchTerm)) {
                     row.style.display = 'contents';
                 } else {
@@ -537,15 +537,15 @@
                 }
             });
         }
-        
+
         // Category filtering
         function filterByCategory(category) {
             // Update active button
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
-            
+
             const rows = document.querySelectorAll('.comparison-row');
-            
+
             rows.forEach(row => {
                 if (category === 'all') {
                     row.style.display = 'contents';
@@ -559,16 +559,16 @@
                 }
             });
         }
-        
+
         // Tool sorting
         function sortTools() {
             const sortBy = document.getElementById('sortSelect').value;
             const grid = document.getElementById('comparisonGrid');
             const rows = Array.from(document.querySelectorAll('.comparison-row'));
-            
+
             rows.sort((a, b) => {
                 let aValue, bValue;
-                
+
                 switch(sortBy) {
                     case 'name':
                         aValue = a.querySelector('.tool-name').textContent;
@@ -586,18 +586,18 @@
                         return 0;
                 }
             });
-            
+
             // Re-append sorted rows
             rows.forEach(row => grid.appendChild(row));
         }
-        
+
         // Smooth scrolling for table of contents
         document.querySelectorAll('.toc-nav a').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
-                
+
                 if (targetElement) {
                     targetElement.scrollIntoView({
                         behavior: 'smooth',
@@ -606,37 +606,37 @@
                 }
             });
         });
-        
+
         // Add hover effects to tool cards
         document.querySelectorAll('.tool-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-4px) scale(1.02)';
             });
-            
+
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
-        
+
         // Progress indicator for reading
         function updateReadingProgress() {
             const article = document.querySelector('.blog-content');
             const progressBar = document.querySelector('.reading-progress');
-            
+
             if (progressBar && article) {
                 const articleTop = article.offsetTop;
                 const articleHeight = article.offsetHeight;
                 const windowHeight = window.innerHeight;
                 const scrollTop = window.pageYOffset;
-                
-                const progress = Math.min(100, Math.max(0, 
+
+                const progress = Math.min(100, Math.max(0,
                     ((scrollTop - articleTop + windowHeight) / articleHeight) * 100
                 ));
-                
+
                 progressBar.style.width = progress + '%';
             }
         }
-        
+
         // Add reading progress bar
         window.addEventListener('scroll', updateReadingProgress);
         window.addEventListener('load', updateReadingProgress);

@@ -4,29 +4,50 @@ This guide provides templates and examples for adding visual elements to blog po
 
 ## Available Visual Elements
 
-### 1. Tool Comparison Chart
+### 1. Interactive Tool Comparison Chart
 
 Use for comparing multiple tools, services, or options with key metrics.
 
 ```html
 <div class="tool-comparison-chart">
-  <h3>Quick Tool Comparison</h3>
-  <div class="comparison-grid">
-    <div class="comparison-header">
-      <div class="tool-name">Tool</div>
-      <div class="category">Category</div>
-      <div class="best-for">Best For</div>
-      <div class="pricing">Pricing</div>
-      <div class="difficulty">Difficulty</div>
+    <h3>Quick Tool Comparison</h3>
+    
+    <!-- Filter and Search Controls -->
+    <div class="filter-controls">
+        <div class="search-box">
+            <input type="text" id="toolSearch" placeholder="🔍 Search tools..." onkeyup="filterTools()">
+        </div>
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterByCategory('all')">All</button>
+            <button class="filter-btn" onclick="filterByCategory('ide')">IDE Assistants</button>
+            <button class="filter-btn" onclick="filterByCategory('platform')">Platforms</button>
+            <button class="filter-btn" onclick="filterByCategory('conversational')">Conversational</button>
+        </div>
+        <div class="sort-controls">
+            <select id="sortSelect" onchange="sortTools()">
+                <option value="name">Sort by Name</option>
+                <option value="price">Sort by Price</option>
+                <option value="difficulty">Sort by Difficulty</option>
+            </select>
+        </div>
     </div>
-    <div class="comparison-row">
-      <div class="tool-name"><strong>[Tool Name]</strong></div>
-      <div class="category">[Category]</div>
-      <div class="best-for">[Use Case]</div>
-      <div class="pricing">[Price]</div>
-      <div class="difficulty">⭐⭐⭐</div>
+    
+    <div class="comparison-grid" id="comparisonGrid">
+        <div class="comparison-header">
+            <div class="tool-name">Tool</div>
+            <div class="category">Category</div>
+            <div class="best-for">Best For</div>
+            <div class="pricing">Pricing</div>
+            <div class="difficulty">Difficulty</div>
+        </div>
+        <div class="comparison-row">
+            <div class="tool-name"><strong>[Tool Name]</strong></div>
+            <div class="category">[Category]</div>
+            <div class="best-for">[Use Case]</div>
+            <div class="pricing">[Price]</div>
+            <div class="difficulty">⭐⭐⭐</div>
+        </div>
     </div>
-  </div>
 </div>
 ```
 
@@ -105,6 +126,150 @@ Use to provide context about the content.
   <span class="difficulty">⚡ [Beginner/Intermediate/Advanced]</span>
   <span class="last-updated">🔄 Updated: [Date]</span>
 </div>
+```
+
+### 6. Expandable Tool Cards
+Use for detailed tool descriptions with interactive expand/collapse functionality.
+
+```html
+<div class="tool-card expandable">
+    <h4>[Tool Name]</h4>
+    <p><strong>Best for:</strong> [Primary use case]</p>
+    <p><strong>Strengths:</strong> [Key advantages]</p>
+    <p><strong>Limitations:</strong> [Known limitations]</p>
+    <p><strong>Use Case:</strong> [Specific scenarios]</p>
+    
+    <button class="expand-btn" onclick="toggleDetails(this)">
+        <span class="expand-text">Show Details</span>
+        <span class="expand-icon">▼</span>
+    </button>
+    
+    <div class="expandable-content">
+        <div class="detailed-info">
+            <h5>Pricing & Plans</h5>
+            <ul>
+                <li><strong>Starter:</strong> $25/month - Basic features</li>
+                <li><strong>Pro:</strong> $50/month - Advanced features</li>
+                <li><strong>Enterprise:</strong> Custom pricing</li>
+            </ul>
+            
+            <h5>Key Features</h5>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+            </ul>
+            
+            <h5>Getting Started</h5>
+            <p>Step-by-step guide for getting started with the tool.</p>
+        </div>
+    </div>
+</div>
+```
+
+### 7. Reading Progress Bar
+Use to show reading progress for long articles.
+
+```html
+<!-- Reading Progress Bar -->
+<div class="reading-progress-container">
+    <div class="reading-progress"></div>
+</div>
+```
+
+## Interactive JavaScript Functions
+
+### Core Interactive Functions
+Include these JavaScript functions for full interactivity:
+
+```javascript
+// Expandable sections functionality
+function toggleDetails(button) {
+    const content = button.nextElementSibling;
+    const expandText = button.querySelector('.expand-text');
+    const expandIcon = button.querySelector('.expand-icon');
+    
+    if (content.style.display === 'block') {
+        content.style.display = 'none';
+        expandText.textContent = 'Show Details';
+        expandIcon.textContent = '▼';
+        button.classList.remove('expanded');
+    } else {
+        content.style.display = 'block';
+        expandText.textContent = 'Hide Details';
+        expandIcon.textContent = '▲';
+        button.classList.add('expanded');
+    }
+}
+
+// Tool filtering functionality
+function filterTools() {
+    const searchTerm = document.getElementById('toolSearch').value.toLowerCase();
+    const rows = document.querySelectorAll('.comparison-row');
+    
+    rows.forEach(row => {
+        const toolName = row.querySelector('.tool-name').textContent.toLowerCase();
+        const category = row.querySelector('.category').textContent.toLowerCase();
+        const bestFor = row.querySelector('.best-for').textContent.toLowerCase();
+        
+        if (toolName.includes(searchTerm) || category.includes(searchTerm) || bestFor.includes(searchTerm)) {
+            row.style.display = 'contents';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+}
+
+// Category filtering
+function filterByCategory(category) {
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    const rows = document.querySelectorAll('.comparison-row');
+    
+    rows.forEach(row => {
+        if (category === 'all') {
+            row.style.display = 'contents';
+        } else {
+            const rowCategory = row.querySelector('.category').textContent.toLowerCase();
+            if (rowCategory.includes(category)) {
+                row.style.display = 'contents';
+            } else {
+                row.style.display = 'none';
+            }
+        }
+    });
+}
+
+// Tool sorting
+function sortTools() {
+    const sortBy = document.getElementById('sortSelect').value;
+    const grid = document.getElementById('comparisonGrid');
+    const rows = Array.from(document.querySelectorAll('.comparison-row'));
+    
+    rows.sort((a, b) => {
+        let aValue, bValue;
+        
+        switch(sortBy) {
+            case 'name':
+                aValue = a.querySelector('.tool-name').textContent;
+                bValue = b.querySelector('.tool-name').textContent;
+                return aValue.localeCompare(bValue);
+            case 'price':
+                aValue = parseFloat(a.querySelector('.pricing').textContent.replace(/[^0-9.]/g, ''));
+                bValue = parseFloat(b.querySelector('.pricing').textContent.replace(/[^0-9.]/g, ''));
+                return aValue - bValue;
+            case 'difficulty':
+                aValue = a.querySelector('.difficulty').textContent.length;
+                bValue = b.querySelector('.difficulty').textContent.length;
+                return aValue - bValue;
+            default:
+                return 0;
+        }
+    });
+    
+    rows.forEach(row => grid.appendChild(row));
+}
 ```
 
 ## Visual Design Principles
