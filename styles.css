@@ -1373,6 +1373,211 @@ footer {
     color: var(--success-color);
 }
 
+/* Interactive Elements Styles */
+
+/* Reading Progress Bar */
+.reading-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.reading-progress {
+    height: 100%;
+    background: var(--gradient-primary);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Filter and Search Controls */
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: var(--light-color);
+    border-radius: 0.75rem;
+    border: 1px solid var(--gray-light);
+}
+
+.search-box {
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--gray-light);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--gray-light);
+    background: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    background: var(--light-color);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.sort-controls select {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--gray-light);
+    border-radius: 0.5rem;
+    background: white;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.sort-controls select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Expandable Sections */
+.expandable {
+    position: relative;
+}
+
+.expand-btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+    margin-top: 1rem;
+}
+
+.expand-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-1px);
+}
+
+.expand-btn.expanded {
+    background: var(--accent-color);
+}
+
+.expand-icon {
+    transition: transform 0.2s ease;
+}
+
+.expandable-content {
+    display: none;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background: var(--light-color);
+    border-radius: 0.75rem;
+    border: 1px solid var(--gray-light);
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.detailed-info h5 {
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.detailed-info h5:first-child {
+    margin-top: 0;
+}
+
+.detailed-info ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.detailed-info li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Enhanced Hover Effects */
+.tool-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tool-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Interactive Table Rows */
+.comparison-row {
+    transition: all 0.2s ease;
+}
+
+.comparison-row:hover > div {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus States for Accessibility */
+.filter-btn:focus,
+.expand-btn:focus,
+.search-box input:focus,
+.sort-controls select:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
 /* Responsive Design for Blog Posts */
 @media (max-width: 768px) {
     .hero-section h1 {
