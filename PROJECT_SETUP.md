@@ -9,7 +9,7 @@ The Mitigator AI project has been initialized with a complete development enviro
 1. Build tools for CSS and JavaScript minification
 2. Code quality tools (ESLint, Stylelint)
 3. Development server with live reloading
-4. VS Code integration
+4. Cursor integration
 5. Development documentation
 6. Contribution guidelines
 
@@ -22,8 +22,8 @@ The Mitigator AI project has been initialized with a complete development enviro
 - **.eslintrc.json**: JavaScript code quality rules
 - **.stylelintrc.json**: CSS code quality rules
 - **.browserslistrc**: Target browser configuration
-- **.vscode/settings.json**: VS Code editor settings
-- **mitigator-ai.code-workspace**: VS Code workspace configuration
+- **.vscode/settings.json**: Cursor editor settings
+- **mitigator-ai.code-workspace**: Cursor workspace configuration
 
 ### Scripts
 
@@ -78,10 +78,11 @@ To start working on the project:
 
 ## Next Steps
 
-1. Address npm vulnerabilities using the `./fix-vulnerabilities.sh` script
+1. ✅ Address npm vulnerabilities using the `./fix-vulnerabilities.sh` script - **COMPLETED**
 2. Consider upgrading ESLint to the latest version (current version shows as deprecated)
 3. Review existing code against the linting rules and fix any issues
 4. Implement additional features as needed per the project roadmap
+5. Fix file watching issues with updated `watch` package (ENOTDIR errors)
 
 ## Related Documentation
 

@@ -45,15 +45,18 @@ The development workflow for mitigator.ai follows a structured approach that lev
 ### Planning & Requirements Phase
 
 #### Objective
+
 Define clear requirements and specifications that can be effectively communicated to AI assistants.
 
 #### Activities
+
 - Document detailed component specifications
 - Create user stories with acceptance criteria
 - Develop visual mockups and wireframes
 - Establish coding standards and patterns
 
 #### AI Assistant Integration
+
 - Use AI to help draft initial requirements documentation
 - Generate user stories based on project goals
 - Create initial planning documents that can be refined by the team
@@ -61,9 +64,11 @@ Define clear requirements and specifications that can be effectively communicate
 ### Development Phase
 
 #### Objective
+
 Efficiently implement website features by leveraging AI coding assistants while maintaining code quality.
 
 #### Activities
+
 - Set up project structure and version control
 - Implement core components with AI assistance
 - Develop integration points for third-party services
@@ -73,9 +78,11 @@ Efficiently implement website features by leveraging AI coding assistants while 
 ### Testing & Quality Assurance
 
 #### Objective
+
 Ensure all code, including AI-generated portions, meets quality standards and functions correctly.
 
 #### Activities
+
 - Develop automated tests for critical functionality
 - Perform cross-browser and responsive testing
 - Conduct accessibility testing
@@ -83,7 +90,7 @@ Ensure all code, including AI-generated portions, meets quality standards and fu
 
 ## AI Integration Strategy
 
-This project utilizes AI coding assistants such as GitHub Copilot or Claude to enhance productivity and code quality. The following strategy outlines how AI assistants will be effectively incorporated into the development workflow.
+This project utilizes AI coding assistants such as Anthropic/Claude and Cursor to enhance productivity and code quality. The following strategy outlines how AI assistants will be effectively incorporated into the development workflow.
 
 ### Core Principles
 
@@ -115,6 +122,7 @@ This project utilizes AI coding assistants such as GitHub Copilot or Claude to e
 ### Effective Prompt Templates
 
 For component development:
+
 ```
 Create a [component type] for the mitigator.ai website with the following specifications:
 
@@ -137,7 +145,24 @@ This section outlines specific tasks for the mitigator.ai project, organized by 
 ### Current Priority Tasks
 
 #### M7: Fix Google Ads Integration
+
 - **Description**: Resolve issues with Google AdSense integration and optimize ad placement.
+- **Status**: Pending - Next priority task
+
+#### M8: Fix File Watching Issues
+- **Description**: Resolve ENOTDIR errors with the updated `watch` package after vulnerability fixes.
+- **Status**: Identified - File watching functionality needs repair after dependency updates
+- **AI Assistant Prompt**:
+  ```
+  Fix file watching issues in the mitigator.ai development environment with:
+  - Diagnose ENOTDIR errors with the updated watch package
+  - Update npm scripts to work with watch@0.13.0
+  - Ensure file watching works for CSS and JS changes
+  - Test live reloading functionality
+  ```
+
+#### M7: Fix Google Ads Integration (continued)
+
 - **AI Assistant Prompt**:
   ```
   Create a plan to fix Google AdSense integration for the mitigator.ai nonprofit website with:
@@ -156,6 +181,7 @@ This section outlines specific tasks for the mitigator.ai project, organized by 
   - Ad displays are properly responsive on all devices
 
 #### M1: Content Update Process
+
 - **Description**: Establish and document an efficient process for regular content updates.
 - **Status**: Completed on June 5, 2025
 - **Implementation**:
@@ -202,20 +228,22 @@ This section outlines specific tasks for the mitigator.ai project, organized by 
   - Lowercase HTML element names and attributes
 - **Comment CSS sections** clearly with descriptive headers
 - **Structure JavaScript** following modern best practices:
+
   ```javascript
   // Module pattern example
-  const featureName = (function() {
+  const featureName = (function () {
     // Private variables and functions
-    
+
     // Public API
     return {
-      init: function() {
+      init: function () {
         // Initialize feature
       },
       // Other public methods
     };
   })();
   ```
+
 - **Prioritize inclusive language** in all code comments and documentation
 
 ### Design & User Experience
